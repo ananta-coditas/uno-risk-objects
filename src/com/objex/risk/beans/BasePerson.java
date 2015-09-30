@@ -81,7 +81,12 @@ public abstract class BasePerson implements Cloneable {
     }
 
     public void setFatherId(Integer fatherId) {
-        this.fatherId = fatherId;
+        if (fatherId == null) {
+            this.fatherId = 0;
+        }
+        else {
+            this.fatherId = fatherId;
+        }
     }
     @XmlElement(name = "motherID")
     public Integer getMotherId() {
@@ -89,7 +94,12 @@ public abstract class BasePerson implements Cloneable {
     }
 
     public void setMotherId(Integer motherId) {
-        this.motherId = motherId;
+         if (motherId == null) {
+            this.motherId = 0;
+        }
+        else {
+            this.motherId = motherId;
+        }
     }
 
     public Integer getTestOrder() {
@@ -119,6 +129,9 @@ public abstract class BasePerson implements Cloneable {
         }
     }
     public TestResult getGermline(String testName) {
+        if (getGermline().get(testName) == null) {
+            return TestResult.NONE;
+        }
         return getGermline().get(testName);   
     }
     public boolean hasGermline() {

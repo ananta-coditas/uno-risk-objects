@@ -8,6 +8,7 @@ package com.objex.risk.beans;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 
@@ -40,7 +41,28 @@ public abstract class BasePerson implements Cloneable {
     public Integer getId() {
         return id;
     }
-
+    public boolean isMother(BasePerson person) {
+       return Objects.equals(getId(), person.getMotherId());
+    }
+    public boolean isFather(BasePerson person) {
+         return Objects.equals(getId(), person.getFatherId());
+    }
+    public boolean isParent(BasePerson person) {
+        return isFather(person) || isMother(person);
+    }
+    /**
+     * this is for a full sibling with the same mother and father
+     * @param person
+     * @return 
+     */
+    public  boolean isSibling(BasePerson person) {
+        boolean sameFather = getFatherId() > 0 && getFatherId() == person.getFatherId();
+        boolean sameMother = getMotherId() > 0 && getMotherId() == person.getMotherId();
+        return  sameFather && sameMother && (!getId().equals(person.getId())) ;
+    }
+    public boolean isChild(BasePerson person) {
+        return person.isParent(this);
+    }
     public void setAge(Integer age) {
         if (age  == null) {
             this.age = 0;

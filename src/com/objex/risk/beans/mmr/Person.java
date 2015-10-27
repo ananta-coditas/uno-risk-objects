@@ -7,6 +7,7 @@ package com.objex.risk.beans.mmr;
 
 import java.util.Arrays;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -21,8 +22,8 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public static final String MSH2 = "MSH2";
     public static final String MSH6 = "MSH6";
             
-    private Integer affectedColonType       = null;
-    private Integer affectedEndometriumType      = null;
+    private Integer affectedColonType       = 0;
+    private Integer affectedEndometriumType      = 0;
     private Integer diagnoseColonAge     = 0;
     private Integer diagnoseEndometriumAge     = 0;
     private Marker marker = null;
@@ -33,6 +34,8 @@ public class Person extends com.objex.risk.beans.BasePerson {
     protected List<String> germLines() {
         return Arrays.asList(MLH1,MSH2,MSH6);
     }
+    
+    @XmlElement(name="Marker")
     public Marker getMarker() {
         return marker;
     }

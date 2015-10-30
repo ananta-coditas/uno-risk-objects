@@ -24,8 +24,9 @@ public class BRCAResult extends BaseResult {
    
    protected static final Map<String,String> columnToFields = new HashMap<>();
    static {
-        columnToFields.put("Contralateral Breast Ca Risk", "contraBreastRisk");
+        columnToFields.put("Contralateral Breast Ca Risk", "breastRisk");
         columnToFields.put("Ovarian Ca Risk", "ovarianRisk");
+        columnToFields.put("Breast Ca Risk", "breastRisk");
     };
  
     public Double getProbabilityMutationBRCA1() {

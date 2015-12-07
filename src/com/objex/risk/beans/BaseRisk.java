@@ -23,6 +23,14 @@ public abstract class BaseRisk implements Cloneable {
     private int ageTo = 85;
     private String penetrance = null; //enum
     boolean saveIncoming = false;
+    private String familyId = "";
+    
+     @XmlElement(name="Error")
+    private List<Error> errors = new ArrayList();
+
+    public String getFamilyId() {
+        return familyId;
+    }
 
     public boolean isSaveIncoming() {
         return saveIncoming;
@@ -38,6 +46,10 @@ public abstract class BaseRisk implements Cloneable {
             return getFamily().get(0);
         }
         return null;
+    }
+
+    public void setFamilyId(String familyId) {
+        this.familyId = familyId;
     }
     public void setSaveIncoming(boolean saveIncoming) {
         this.saveIncoming = saveIncoming;
@@ -61,7 +73,6 @@ public abstract class BaseRisk implements Cloneable {
             this.penetrance = penetrance;
     }
     
-
     public String getInput() {
         return input;
     }
@@ -81,8 +92,20 @@ public abstract class BaseRisk implements Cloneable {
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-     public void remove(BasePerson person) {
+    
+    public void remove(BasePerson person) {
        getFamily().remove(person);
+    }
+    
+    public void addError(Error error) {
+        errors.add(error);
+    }
+    public boolean hasErrors() {
+        return !errors.isEmpty();
+    }
+    
+    public List<Error> getErrors() {
+        return errors;
     }
     
 }

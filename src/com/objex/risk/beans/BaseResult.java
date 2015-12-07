@@ -19,6 +19,7 @@ public abstract class BaseResult {
     @XmlElement(name="Prediction")
     private List<Prediction>  predictions = new ArrayList<Prediction>();
     protected Double probabilityCarrier = null;
+    protected String version = "";
            
     public Prediction addPrediction() {
         Prediction prediction = new Prediction();
@@ -30,6 +31,10 @@ public abstract class BaseResult {
         if ("Pr(Being a carrier)".equals(name)) {
            setProbabilityCarrier(prob);
         }
+    }
+
+    public String getVersion() {
+        return version;
     }
     protected  void init(Prediction pred) {
         pred.setColumnMappings(getColumnToFields());
@@ -62,4 +67,8 @@ public abstract class BaseResult {
     }
 
     public abstract Map<String, String> getColumnToFields();
+
+    public void setVersion(String version) {
+        this.version = version;
+    } 
 }

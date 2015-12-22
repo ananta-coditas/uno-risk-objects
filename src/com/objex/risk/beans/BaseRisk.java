@@ -5,10 +5,7 @@
  */
 package com.objex.risk.beans;
 
-import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
 
 /**
  *
@@ -24,9 +21,6 @@ public abstract class BaseRisk implements Cloneable {
     private String penetrance = null; //enum
     boolean saveIncoming = false;
     private String familyId = "";
-    
-     @XmlElement(name="Error")
-    private List<Error> errors = new ArrayList();
 
     public String getFamilyId() {
         return familyId;
@@ -96,16 +90,4 @@ public abstract class BaseRisk implements Cloneable {
     public void remove(BasePerson person) {
        getFamily().remove(person);
     }
-    
-    public void addError(Error error) {
-        errors.add(error);
-    }
-    public boolean hasErrors() {
-        return !errors.isEmpty();
-    }
-    
-    public List<Error> getErrors() {
-        return errors;
-    }
-    
 }

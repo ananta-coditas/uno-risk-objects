@@ -20,6 +20,9 @@ public abstract class BaseResult {
     private List<Prediction>  predictions = new ArrayList<Prediction>();
     protected Double probabilityCarrier = null;
     protected String version = "";
+    
+    @XmlElement(name="Error")
+    private List<RiskError> errors = new ArrayList();
            
     public Prediction addPrediction() {
         Prediction prediction = new Prediction();
@@ -71,4 +74,15 @@ public abstract class BaseResult {
     public void setVersion(String version) {
         this.version = version;
     } 
+    
+    public void addError(RiskError error) {
+        errors.add(error);
+    }
+    public boolean hasErrors() {
+        return !errors.isEmpty();
+    }
+    
+    public List<RiskError> getErrors() {
+        return errors;
+    }
 }

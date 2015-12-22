@@ -11,21 +11,32 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author jason
  */
-@XmlRootElement(name = "Error")
-public class Error {
+@XmlRootElement(name = "RiskError")
+public class RiskError {
     private String description = "";
-    private Integer code = 0;
+    private Integer personId = 0;
 
     public Integer getCode() {
-        return code;
+        return personId;
     }
 
+    public RiskError() {}
+    
+    public RiskError(Integer personId, String desc) {
+        this.personId = personId;
+        this.description = desc;
+    }
+    
+    public RiskError(String desc) {
+        this(0,desc);
+    }
+    
     public String getDescription() {
         return description;
     }
 
     public void setCode(Integer code) {
-        this.code = code;
+        this.personId = code;
     }
 
     public void setDescription(String description) {

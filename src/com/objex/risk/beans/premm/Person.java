@@ -5,7 +5,8 @@
  */
 package com.objex.risk.beans.premm;
 
-import java.util.Arrays;
+import com.objex.risk.beans.AffectedType;
+import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -17,13 +18,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(namespace="com.objex.risk.beans.premm")
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
-    public enum AffectedType { NONE(0),ONE(1),MULTIPLE(2);
-        public int value = 0;
-        AffectedType(int code) {
-            value = code;
-        }
-};
-    
     
     public static final String MLH1 = "MLH1";
     public static final String MSH2 = "MSH2";
@@ -36,6 +30,8 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private Integer diagnoseEndometriumAge     = 0;
     private Integer diagnoseRelatedAge     = 0;
     
+    public static final List<String> germLines = new ArrayList(); //empty
+    
     
     
     public Person() {
@@ -43,7 +39,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
 
     @Override
     protected List<String> germLines() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return germLines;
     }
    
     public AffectedType getAffectedColonType() {
@@ -61,15 +57,8 @@ public class Person extends com.objex.risk.beans.BasePerson {
         }
     }
     public void setAffectedColonType(Integer intType) {
-        setAffectedColonType(toAffectedType(intType));
-    }
-    public static AffectedType toAffectedType(Integer anInt) {
-        for (AffectedType type : AffectedType.values()) {
-            if (anInt != null && anInt == type.value) {
-                return type;
-            }
-        }
-        return AffectedType.NONE;
+        
+        setAffectedColonType(AffectedType.toAffectedType(intType));
     }
     public void setAffectedRelatedType(AffectedType affectedRelatedType) {
          if (affectedRelatedType == null) {
@@ -79,10 +68,10 @@ public class Person extends com.objex.risk.beans.BasePerson {
         }
     }
     public void setAffectedRelatedType(Integer intType) {
-        setAffectedRelatedType(toAffectedType(intType));
+        setAffectedRelatedType(AffectedType.toAffectedType(intType));
     }
-     public void setAffectedEndolmetriumType(Integer intType) {
-        setAffectedEndometriumType(toAffectedType(intType));
+     public void setAffectedEndometriumType(Integer intType) {
+        Person.this.setAffectedEndometriumType(AffectedType.toAffectedType(intType));
     }
     public AffectedType getAffectedEndometriumType() {
         return affectedEndometriumType;

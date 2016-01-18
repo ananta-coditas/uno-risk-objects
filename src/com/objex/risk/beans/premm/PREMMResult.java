@@ -24,10 +24,6 @@ public class PREMMResult extends BaseResult {
     protected static final Map<String,String> columnToFields = new HashMap<>();
     public static final String COLORECTAL_RISK = "colorectalRisk";
     public static final String ENDOMETRIAL_RISK = "endometrialRisk";
-   static {
-        columnToFields.put("Colorectal Ca Risk", COLORECTAL_RISK);
-        columnToFields.put("Endometrial Ca Risk", ENDOMETRIAL_RISK);
-    };
 
     @Override
     public void addProbability(String name, Double prob) {

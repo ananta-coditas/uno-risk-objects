@@ -5,12 +5,12 @@
  */
 package com.objex.risk.beans.brca;
 
-import com.objex.risk.beans.TestResult;
 import java.util.Arrays;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import static com.objex.risk.beans.Germline.*;
 
 /**
  *
@@ -19,8 +19,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(namespace="com.objex.risk.beans.brca")
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
-    public static final String BRCA1 = "BRCA1";
-    public static final String BRCA2 = "BRCA2"; 
     public enum Ethnic  {nonAJ, AJ, Italian, Other, NA }
     private Integer affectedBreastType       = 0;
     private Integer affectedOvarianType      = 0;

@@ -5,11 +5,11 @@
  */
 package com.objex.risk.beans.mela;
 
-import com.objex.risk.beans.panc.*;
 import java.util.Arrays;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import static com.objex.risk.beans.Germline.*;
 
 /**
  *
@@ -18,7 +18,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(namespace="com.objex.risk.beans.mela")
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
-    public static final String P16 = "P16";
     /*Family members for whom no information is avaliable should be coded with a 0 in the cancer
         diagnosis fields, and a 1 in the age elds. */
     private Integer affectedSkinType       = 0;

@@ -10,6 +10,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import static com.objex.risk.beans.Germline.*;
 
 /**
  *
@@ -18,9 +19,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(namespace="com.objex.risk.beans.mmr")
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
-    public static final String MLH1 = "MLH1";
-    public static final String MSH2 = "MSH2";
-    public static final String MSH6 = "MSH6";
             
     private Integer affectedColonType       = 0;
     private Integer affectedEndometriumType      = 0;

@@ -28,7 +28,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private boolean performedBiopsy  = false;
     private Integer biopsyCount = 0;  
     private Integer menarcheAge = 0;
-    private boolean hasLiveBirth = false;
+    private Boolean hasLiveBirth = false;
     private Integer liveBirthAge = 0;
     private boolean hasHyperplasia = false;
     private Race race = Race.White;
@@ -68,7 +68,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
         return performedBiopsy;
     }
     
-     public boolean hasHyperplasia() {
+     public boolean getHasHyperplasia() {
         return hasHyperplasia;
     }
 
@@ -92,11 +92,11 @@ public class Person extends com.objex.risk.beans.BasePerson {
         this.hasHyperplasia = hasHyperplasia;
     }
 
-    public void setHasLiveBirth(boolean hasLiveBirth) {
+    public void setHasLiveBirth(Boolean hasLiveBirth) {
         this.hasLiveBirth = hasLiveBirth;
     }
     
-    public boolean hasLiveBirth() {
+    public Boolean getHasLiveBirth() {
         return hasLiveBirth;
     }
 

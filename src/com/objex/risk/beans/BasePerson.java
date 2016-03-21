@@ -42,12 +42,21 @@ public abstract class BasePerson implements Cloneable {
         return id;
     }
     public boolean isMother(BasePerson person) {
+        if (person == null) {
+            return false;
+        }
        return Objects.equals(getId(), person.getMotherId());
     }
     public boolean isFather(BasePerson person) {
+         if (person == null) {
+            return false;
+        }
          return Objects.equals(getId(), person.getFatherId());
     }
     public boolean isParent(BasePerson person) {
+         if (person == null) {
+            return false;
+        }
         return isFather(person) || isMother(person);
     }
     /**
@@ -56,11 +65,30 @@ public abstract class BasePerson implements Cloneable {
      * @return 
      */
     public  boolean isSibling(BasePerson person) {
+        if (person == null || getId().equals(person.getId())) {
+            return false;
+        }
         boolean sameFather = getFatherId() > 0 && getFatherId() == person.getFatherId();
         boolean sameMother = getMotherId() > 0 && getMotherId() == person.getMotherId();
-        return  sameFather && sameMother && (!getId().equals(person.getId())) ;
+        return  sameFather && sameMother;
+    }
+    /**
+     * this is for a half sibling with the same mother and father
+     * @param person
+     * @return 
+     */
+    public  boolean isHalfSibling(BasePerson person) {
+        if (person == null || getId().equals(person.getId())) {
+            return false;
+        }
+        boolean sameFather = getFatherId() > 0 && getFatherId() == person.getFatherId();
+        boolean sameMother = getMotherId() > 0 && getMotherId() == person.getMotherId();
+        return  sameFather || sameMother && !isSibling(person);
     }
     public boolean isChild(BasePerson person) {
+         if (person == null) {
+            return false;
+        }
         return person.isParent(this);
     }
     public void setAge(Integer age) {

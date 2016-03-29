@@ -83,7 +83,7 @@ public abstract class BasePerson implements Cloneable {
         }
         boolean sameFather = getFatherId() > 0 && getFatherId() == person.getFatherId();
         boolean sameMother = getMotherId() > 0 && getMotherId() == person.getMotherId();
-        return  sameFather || sameMother && !isSibling(person);
+        return  (sameFather || sameMother) && !isSibling(person);
     }
     public boolean isChild(BasePerson person) {
          if (person == null) {

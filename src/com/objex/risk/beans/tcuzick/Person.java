@@ -288,7 +288,11 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setHeight(Double height) {
-        this.height = height;
+        if (height != null && height != 0) {
+            this.height = height;
+        } else {
+            this.height = -99d;
+        }
     }
 
     public void setHrtType(HRTType hrtType) {
@@ -324,19 +328,52 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setWeight(Double weight) {
-        this.weight = weight;
+        if (weight != null && weight != 0) {
+            this.weight = weight;
+        } else {
+            this.weight = -99d;
+        }
+    }
+    
+    public void setWeight(String val) {
+        try {
+            setWeight(Double.parseDouble(val));
+        } catch (Exception e) {
+            setWeight(0d);
+        }
+    }
+    
+    public void setHeight(String val) {
+        try {
+            setHeight(Double.parseDouble(val));
+        } catch (Exception e) {
+            setHeight(0d);
+        }
+    }
+    
+
+    public void setYearsFutureHRT(Double years) {
+          if (years != null) {
+            this.yearsFutureHRT = years;
+        } else {
+            this.yearsFutureHRT = 0d;
+        }
     }
 
-    public void setYearsFutureHRT(Double yearsFutureHRT) {
-        this.yearsFutureHRT = yearsFutureHRT;
+    public void setYearsPastHRT(Double years) {
+        if (years != null) {
+            this.yearsPastHRT = years;
+        } else {
+            this.yearsPastHRT = 0d;
+        }
     }
 
-    public void setYearsPastHRT(Double yearsPastHRT) {
-        this.yearsPastHRT = yearsPastHRT;
-    }
-
-    public void setYearsSinceHRT(Double yearsSinceHRT) {
-        this.yearsSinceHRT = yearsSinceHRT;
+    public void setYearsSinceHRT(Double years) {
+        if (years != null) {
+            this.yearsSinceHRT = years;
+        } else {
+            this.yearsSinceHRT = 0d;
+        }
     }
    
 }

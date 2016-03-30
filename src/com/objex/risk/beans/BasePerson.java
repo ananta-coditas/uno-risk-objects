@@ -24,6 +24,7 @@ public abstract class BasePerson implements Cloneable {
     private Integer fatherId               = 0;
     private Integer motherId               = 0;
     private Integer testOrder             =  0;
+    private boolean proband              = false;
     @XmlElementWrapper(name="Germline")
     private Map<String, TestResult> germline = null;
 
@@ -36,6 +37,7 @@ public abstract class BasePerson implements Cloneable {
     public Integer getAgeOfDeath() {
         return ageOfDeath;
     }
+    
     
     @XmlElement(name = "ID")
     public Integer getId() {
@@ -58,6 +60,10 @@ public abstract class BasePerson implements Cloneable {
             return false;
         }
         return isFather(person) || isMother(person);
+    }
+
+    public boolean isProband() {
+        return proband;
     }
     /**
      * this is for a full sibling with the same mother and father
@@ -107,6 +113,10 @@ public abstract class BasePerson implements Cloneable {
         else {
          this.ageOfDeath  = ageOfDeath; 
         }
+    }
+
+    public void setProband(boolean proband) {
+        this.proband = proband;
     }
     protected Integer toInt(Integer inValue) {
         if (inValue == null) {

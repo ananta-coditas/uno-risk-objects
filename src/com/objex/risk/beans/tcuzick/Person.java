@@ -48,8 +48,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
         }
     };
     
-    private boolean performedBiopsy  = false;
-    private Integer biopsyCount = 0;  
+   
     private Integer menarcheAge = -99;
     private Integer menopauseAge = 0;
     private MenosType menostat = MenosType.Unknown;
@@ -83,10 +82,6 @@ public class Person extends com.objex.risk.beans.BasePerson {
     
     public AffectedType getAffectedBreastType() {
         return affectedBreastType;
-    }
-
-    public Integer getBiopsyCount() {
-        return biopsyCount;
     }
 
     public Double getHeight() {
@@ -203,10 +198,6 @@ public class Person extends com.objex.risk.beans.BasePerson {
              this.diagnoseBilateralBreastAge = toInt(diagnoseBilateralBreastAge);
     }
      
-    public boolean isPerformedBiopsy() {
-        return performedBiopsy;
-    }
-    
     public boolean getHasHyperplasia() {
         return hasHyperplasia;
     }
@@ -271,9 +262,6 @@ public class Person extends com.objex.risk.beans.BasePerson {
         setAffectedOvarianType(AffectedType.toAffectedType(affectedOvarianType));
     }
 
-    public void setBiopsyCount(Integer biopsyCount) {
-        this.biopsyCount = biopsyCount;
-    }
 
     public void setHasHyperplasia(boolean hasHyperplasia) {
         this.hasHyperplasia = hasHyperplasia;
@@ -283,7 +271,15 @@ public class Person extends com.objex.risk.beans.BasePerson {
         this.hasLiveBirth = hasLiveBirth;
     }
     
+    /**
+     * return false if no known live birth
+     * @return 
+     */
+    
     public boolean getHasLiveBirth() {
+        if (hasLiveBirth == null) {
+            return false;
+        }
         return hasLiveBirth;
     }
 
@@ -317,10 +313,6 @@ public class Person extends com.objex.risk.beans.BasePerson {
 
     public void setMenostat(MenosType menostat) {
         this.menostat = menostat;
-    }
-    
-    public void setPerformedBiopsy(boolean biopsy) {
-        this.performedBiopsy = biopsy;
     }
     
     public void setEthnic(Ethnic ethnic) {

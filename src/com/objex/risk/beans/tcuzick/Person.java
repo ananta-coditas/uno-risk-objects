@@ -107,7 +107,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public Integer getMenopauseAge() {
         if (getMenostat() == MenosType.preMenopausal || getMenostat() == MenosType.periMenopausal || getMenostat() == MenosType.Unknown) {
             return -99;
-        } else if (getMenostat() == MenosType.postMenopausal && getMenopauseAge() == 0) {
+        } else if (getMenostat() == MenosType.postMenopausal && menarcheAge == 0) {
             return 50;
         }
         return menopauseAge;
@@ -304,11 +304,22 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setMenarcheAge(Integer menarcheAge) {
-        this.menarcheAge = menarcheAge;
+         if (menarcheAge == null) {
+            this.menarcheAge = -99;
+        } else {
+             this.menarcheAge = menarcheAge;
+        }
+       
+        
     }
 
     public void setMenopauseAge(Integer menopauseAge) {
-        this.menopauseAge = menopauseAge;
+        if (menopauseAge == null) {
+            this.menopauseAge = 0;
+        } else {
+             this.menopauseAge = menopauseAge;
+        }
+       
     }
 
     public void setMenostat(MenosType menostat) {

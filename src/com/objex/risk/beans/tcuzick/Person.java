@@ -188,14 +188,23 @@ public class Person extends com.objex.risk.beans.BasePerson {
      */
     public void setDiagnoseOvarianAge(Integer diagnoseOvarianAge) {
              this.diagnoseOvarianAge = toInt(diagnoseOvarianAge);
+              if (this.diagnoseOvarianAge == 1) { //this allows it to use same fields as bayes which sets 1 for empty
+                 this.diagnoseOvarianAge = 0;   
+             }
     }
 
     public void setDiagnoseBreastAge(Integer diagnoseBreastAge) {
              this.diagnoseBreastAge = toInt(diagnoseBreastAge);
+             if (this.diagnoseBreastAge == 1) { //this allows it to use same fields as bayes
+                 this.diagnoseBreastAge = 0;   
+             }
     }
     
     public void setDiagnoseBilateralBreastAge(Integer diagnoseBilateralBreastAge) {
              this.diagnoseBilateralBreastAge = toInt(diagnoseBilateralBreastAge);
+             if (this.diagnoseBilateralBreastAge == 1) { //this allows it to use same fields as bayes
+                 this.diagnoseBilateralBreastAge = 0;   
+             }
     }
      
     public boolean getHasHyperplasia() {

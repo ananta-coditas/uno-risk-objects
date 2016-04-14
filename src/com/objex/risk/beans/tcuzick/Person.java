@@ -41,6 +41,12 @@ public class Person extends com.objex.risk.beans.BasePerson {
             value = code;
         }
     };
+    public enum HyperplasiaType { NONE(0),TYPICAL(1),BENIGN_DISEASE(2);
+        public int value;
+        HyperplasiaType(int code) {
+            value = code;
+        }
+    };
      public enum MenosType { preMenopausal(0),periMenopausal(1),postMenopausal(2),Unknown(3);
         public int value;
         MenosType(int code) {
@@ -56,7 +62,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private Double weight = -99d; //kgs
     private Boolean hasLiveBirth = null;
     private Integer liveBirthAge = -99;
-    private boolean hasHyperplasia = false;
+    private HyperplasiaType hyperplasia = HyperplasiaType.NONE;
     private boolean hasAtypicalHyperplasia = false;
     private boolean hasLCIS = false;
     private Ethnic ethnic     =  Ethnic.nonAJ;
@@ -207,8 +213,8 @@ public class Person extends com.objex.risk.beans.BasePerson {
              }
     }
      
-    public boolean getHasHyperplasia() {
-        return hasHyperplasia;
+    public HyperplasiaType getHyperplasia() {
+        return hyperplasia;
     }
     
     public boolean getHasAtypicalHyperplasia() {
@@ -272,8 +278,12 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
 
-    public void setHasHyperplasia(boolean hasHyperplasia) {
-        this.hasHyperplasia = hasHyperplasia;
+    public void setHyperplasia(HyperplasiaType hyperplasia) {
+        if (hyperplasia == null) {
+            this.hyperplasia = HyperplasiaType.NONE;
+        } else {
+            this.hyperplasia = hyperplasia;
+        }
     }
 
     public void setHasLiveBirth(boolean hasLiveBirth) {

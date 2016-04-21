@@ -155,15 +155,9 @@ public class Person extends com.objex.risk.beans.BasePerson {
     
     public Integer getDiagnoseBreastAge() {
       if (diagnoseBreastAge == 0 || diagnoseBreastAge == -99) {
-          if (getAge() == 0) {
-              if (getAgeOfDeath() == 0) {
-                  return -99;
-              } else {
-                  return getAgeOfDeath();
-              }
-          } else {
-            return getAge();
-          }
+          if (getAge() != 0  && !getAffectedBreastType().isAffected()) {
+              return getAge();
+          } 
       }
       return diagnoseBreastAge;
     }

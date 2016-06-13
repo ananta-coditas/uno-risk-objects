@@ -31,6 +31,9 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private Boolean hasLiveBirth = false;
     private Integer liveBirthAge = 0;
     private boolean hasHyperplasia = false;
+    private boolean hasLCIS = false;
+    private boolean hasDCIS = false;
+    private boolean hasMantleRadiation = false;
     private Race race = Race.White;
     private AffectedType affectedBreastType = AffectedType.NONE;
     
@@ -64,6 +67,18 @@ public class Person extends com.objex.risk.beans.BasePerson {
         return race;
     }
 
+    public boolean getHasLCIS() {
+        return hasLCIS;
+    }
+    
+     public boolean getHasDCIS() {
+        return hasDCIS;
+    }
+
+    public boolean getHasMantleRadiation() {
+        return hasMantleRadiation;
+    }
+
     public boolean isPerformedBiopsy() {
         return performedBiopsy;
     }
@@ -88,8 +103,16 @@ public class Person extends com.objex.risk.beans.BasePerson {
         this.biopsyCount = biopsyCount;
     }
 
+    public void setHasDCIS(boolean hasDCIS) {
+        this.hasDCIS = hasDCIS;
+    }
+
     public void setHasHyperplasia(boolean hasHyperplasia) {
         this.hasHyperplasia = hasHyperplasia;
+    }
+
+    public void setHasLCIS(boolean hasLCIS) {
+        this.hasLCIS = hasLCIS;
     }
 
     public void setHasLiveBirth(Boolean hasLiveBirth) {
@@ -98,6 +121,10 @@ public class Person extends com.objex.risk.beans.BasePerson {
     
     public Boolean getHasLiveBirth() {
         return hasLiveBirth;
+    }
+
+    public void setHasMantleRadiation(boolean hasMantleRadiation) {
+        this.hasMantleRadiation = hasMantleRadiation;
     }
 
     public void setLiveBirthAge(Integer liveBirthAge) {

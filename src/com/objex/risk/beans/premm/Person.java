@@ -28,7 +28,6 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private AffectedType affectedRelatedType = AffectedType.NONE;
     private Integer diagnoseColonAge     = 0;
     private Integer diagnoseEndometriumAge     = 0;
-    private Integer diagnoseRelatedAge     = 0;
     
     public static final List<String> germLines = new ArrayList(); //empty
     

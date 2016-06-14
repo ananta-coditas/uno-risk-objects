@@ -6,6 +6,9 @@
 package com.objex.risk.beans.gail;
 
 import com.objex.risk.beans.AffectedType;
+import static com.objex.risk.beans.Germline.BRCA1;
+import static com.objex.risk.beans.Germline.BRCA2;
+import java.util.Arrays;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -34,7 +37,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private boolean hasLCIS = false;
     private boolean hasDCIS = false;
     private boolean hasMantleRadiation = false;
-    private Race race = Race.White;
+    private Race race = null;
     private AffectedType affectedBreastType = AffectedType.NONE;
     
    
@@ -44,7 +47,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
 
     @Override
     protected List<String> germLines() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         return Arrays.asList(BRCA1,BRCA2);
     }
 
     public AffectedType getAffectedBreastType() {

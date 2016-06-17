@@ -27,7 +27,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
               value = code;
           }
     }
-    public enum HRTType { OESTROGEN(0),COMBINED(1);
+    public enum HRTType { ESTROGEN(0),OESTROGEN(0),COMBINED(1);
           public int value;
           HRTType(int code) {
               value = code;

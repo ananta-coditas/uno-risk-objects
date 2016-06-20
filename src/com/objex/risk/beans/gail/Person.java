@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(namespace="com.objex.risk.beans.gail")
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
-    public enum Race  {White(1), Black(2), Hispanic(3), Chinese(7), Japanese(8), Filipino(9), Hawaiian(10), PacificIslander(11), AsianAmerican(12);
+    public enum Race  {White(1), Black(2), Hispanic(3), Chinese(7), Japanese(8), Filipino(9), Hawaiian(10), PacificIslander(11), AsianAmerican(12),Unsupported(13);
          public int value = 0;
          Race(int code) {
             value = code;
@@ -103,7 +103,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setBiopsyCount(Integer biopsyCount) {
-        this.biopsyCount = biopsyCount;
+        this.biopsyCount = nonNull(biopsyCount);
     }
 
     public void setHasDCIS(boolean hasDCIS) {
@@ -131,11 +131,11 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setLiveBirthAge(Integer liveBirthAge) {
-        this.liveBirthAge = liveBirthAge;
+        this.liveBirthAge = nonNull(liveBirthAge);
     }
 
     public void setMenarcheAge(Integer menarcheAge) {
-        this.menarcheAge = menarcheAge;
+        this.menarcheAge = nonNull(menarcheAge);
     }
     
     public void setPerformedBiopsy(boolean biopsy) {

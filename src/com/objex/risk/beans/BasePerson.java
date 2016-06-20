@@ -38,7 +38,6 @@ public abstract class BasePerson implements Cloneable {
         return ageOfDeath;
     }
     
-    
     @XmlElement(name = "ID")
     public Integer getId() {
         return id;
@@ -96,6 +95,10 @@ public abstract class BasePerson implements Cloneable {
             return false;
         }
         return person.isParent(this);
+    }
+    
+    protected Integer nonNull(Integer i) {
+        return i == null ? 0 : i;
     }
     public void setAge(Integer age) {
         if (age  == null) {

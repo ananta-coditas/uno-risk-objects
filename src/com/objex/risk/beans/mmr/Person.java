@@ -45,17 +45,31 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public Integer getAffectedColonType() {
         return affectedColonType;
     }
-
+   
+   /**
+    * the max value of this is one, greater integers will be translated to 1
+    * @param affectedColonType 
+    */ 
     public void setAffectedColonType(Integer affectedColonType) {
         this.affectedColonType = toInt(affectedColonType);
+        if (this.affectedColonType > 1) {
+            this.affectedColonType = 1;
+        }
     }
 
     public Integer getAffectedEndometriumType() {
         return affectedEndometriumType;
     }
+    /**
+     * the integer is converted to 1 if it is greater than 1.
+     * @param affectedEndometriumType 
+     */
 
     public void setAffectedEndometriumType(Integer affectedEndometriumType) {
         this.affectedEndometriumType = toInt(affectedEndometriumType);
+        if (this.affectedEndometriumType > 1) {
+            this.affectedEndometriumType = 1;
+        }
     }
 
     public Integer getDiagnoseColonAge() {

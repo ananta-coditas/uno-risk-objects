@@ -97,9 +97,6 @@ public abstract class BasePerson implements Cloneable {
         return person.isParent(this);
     }
     
-    protected Integer nonNull(Integer i) {
-        return i == null ? 0 : i;
-    }
     public void setAge(Integer age) {
         if (age  == null) {
             this.age = 0;

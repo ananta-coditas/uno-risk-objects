@@ -103,7 +103,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setBiopsyCount(Integer biopsyCount) {
-        this.biopsyCount = nonNull(biopsyCount);
+        this.biopsyCount = toInt(biopsyCount);
     }
 
     public void setHasDCIS(boolean hasDCIS) {
@@ -131,11 +131,11 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setLiveBirthAge(Integer liveBirthAge) {
-        this.liveBirthAge = nonNull(liveBirthAge);
+        this.liveBirthAge = toInt(liveBirthAge);
     }
 
     public void setMenarcheAge(Integer menarcheAge) {
-        this.menarcheAge = nonNull(menarcheAge);
+        this.menarcheAge = toInt(menarcheAge);
     }
     
     public void setPerformedBiopsy(boolean biopsy) {

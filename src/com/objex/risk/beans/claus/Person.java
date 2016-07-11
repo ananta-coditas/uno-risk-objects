@@ -21,6 +21,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private AffectedType affectedBreastType = AffectedType.NONE;
     private AffectedType affectedOvarianType  = AffectedType.NONE;
     private Integer diagnoseBreastAge     = 0;
+    private Integer diagnoseOvarianAge     = 0;
     
     public Person() {
     }
@@ -33,9 +34,14 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public AffectedType getAffectedBreastType() {
         return affectedBreastType;
     }
+    
 
     public AffectedType getAffectedOvarianType() {
         return affectedOvarianType;
+    }
+
+    public Integer getDiagnoseOvarianAge() {
+        return diagnoseOvarianAge;
     }
 
    
@@ -83,6 +89,19 @@ public class Person extends com.objex.risk.beans.BasePerson {
     
      public void setAffectedOvarianType(Integer affectedOvarianType) {
         setAffectedOvarianType(AffectedType.toAffectedType(affectedOvarianType));
+    }
+     
+       /**
+     * Age of onset of ovarian cancer if an ovarian cancer case.  Current age or 
+     * age of death if not an ovarian cancer case. 1 if unaffected and there is 
+     * no age information.
+     * @param diagnoseOvarianAge 
+     */
+    public void setDiagnoseOvarianAge(Integer diagnoseOvarianAge) {
+             this.diagnoseOvarianAge = toInt(diagnoseOvarianAge);
+              if (this.diagnoseOvarianAge == 1) { //this allows it to use same fields as bayes which sets 1 for empty
+                 this.diagnoseOvarianAge = 0;   
+             }
     }
      
 }

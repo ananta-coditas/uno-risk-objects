@@ -56,7 +56,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     
    
     private Integer menarcheAge = -99;
-    private Integer menopauseAge = 0;
+    private Integer menopauseAge = -99;
     private MenosType menostat = MenosType.Unknown;
     private Double height = -99d; //meters
     private Double weight = -99d; //kgs
@@ -113,8 +113,8 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public Integer getMenopauseAge() {
         if (getMenostat() == MenosType.preMenopausal || getMenostat() == MenosType.periMenopausal || getMenostat() == MenosType.Unknown) {
             return -99;
-        } else if (getMenostat() == MenosType.postMenopausal && menarcheAge == 0) {
-            return 50;
+        } else if (getMenostat() == MenosType.postMenopausal && menopauseAge == 0) {
+            return -99;  //50;  50 matches the spec but not the implementation
         }
         return menopauseAge;
     }
@@ -329,8 +329,8 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setMenopauseAge(Integer menopauseAge) {
-        if (menopauseAge == null) {
-            this.menopauseAge = 0;
+        if (menopauseAge == null || menopauseAge == 0) {
+            this.menopauseAge = -99;
         } else {
              this.menopauseAge = menopauseAge;
         }

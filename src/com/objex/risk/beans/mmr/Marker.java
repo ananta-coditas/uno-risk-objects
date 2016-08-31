@@ -5,9 +5,8 @@
  */
 package com.objex.risk.beans.mmr;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlRootElement;
-import static com.objex.risk.beans.TestResult.NONE;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -16,7 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(namespace="com.objex.risk.beans.mmr")
 @XmlRootElement(name = "Marker")
-public class Marker implements Cloneable  {
+public class Marker implements Cloneable, Serializable  {
     public enum MSIType {HIGH_INSTABILITY(1),LOW_INSTABILITY(2),NONE(0);
          public int value = 0;
          MSIType(int value) {
@@ -31,9 +30,25 @@ public class Marker implements Cloneable  {
     }    
     private MSIType msi = MSIType.NONE;
     private TumorLoc location = TumorLoc.UNKNOWN;
+    private Integer id            = null;
+    private String transId = null;
+
+    public Integer getId() {
+        return id;
+    }
 
     public MSIType getMsi() {
         return msi;
+    }
+
+    public String getTransId() {
+        return transId;
+    }
+    
+    
+
+    public void setId(Integer Id) {
+        id = Id;
     }
 
     public void setMsi(MSIType msi) {
@@ -48,5 +63,9 @@ public class Marker implements Cloneable  {
         this.location = location;
     }
 
+    public void setTransId(String transId) {
+        this.transId = transId;
+    }
+    
     
 }

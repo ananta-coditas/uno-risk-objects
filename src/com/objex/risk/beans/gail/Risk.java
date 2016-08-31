@@ -6,6 +6,7 @@
 package com.objex.risk.beans.gail;
 
 import com.objex.risk.beans.BaseRisk;
+import static com.objex.risk.beans.gail.GailResult.GAIL;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
@@ -31,5 +32,10 @@ public class Risk extends BaseRisk {
     }
      public void add(Person person) {
        family.add(person);
+    }
+
+    @Override
+    public String getModel() {
+        return GAIL;
     }
 }

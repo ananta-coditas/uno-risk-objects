@@ -6,6 +6,7 @@
 package com.objex.risk.beans.mela;
 
 import com.objex.risk.beans.BaseRisk;
+import static com.objex.risk.beans.mela.MelaResult.MELAPRO;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
@@ -32,6 +33,11 @@ public class Risk extends BaseRisk {
     }
      public void add(Person person) {
        family.add(person);
+    }
+
+    @Override
+    public String getModel() {
+        return MELAPRO;
     }
 
     public Double getSensitivity() {

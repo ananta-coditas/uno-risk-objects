@@ -5,9 +5,8 @@
  */
 package com.objex.risk.beans.premm;
 
-import com.objex.risk.beans.mmr.*;
-import com.objex.risk.beans.BasePerson;
 import com.objex.risk.beans.BaseRisk;
+import static com.objex.risk.beans.premm.PREMMResult.PREMM;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,5 +32,10 @@ public class Risk extends BaseRisk {
     }
      public void add(Person person) {
        family.add(person);
+    }
+
+    @Override
+    public String getModel() {
+       return PREMM;
     }
 }

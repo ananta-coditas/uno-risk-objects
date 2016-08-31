@@ -6,6 +6,7 @@
 package com.objex.risk.beans.brca;
 
 import com.objex.risk.beans.BasePerson;
+import static com.objex.risk.beans.brca.BRCAResult.BRCAPRO;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,6 +34,11 @@ public class Risk extends com.objex.risk.beans.BaseRisk {
     
     public enum Race  {Unknown, Hispanic, Asian, Black, NativeAmerican,White }   
     private Race race =  Race.Unknown;
+
+    @Override
+    public String getModel() {
+        return BRCAPRO;
+    }
 
     public boolean isImpute() {
         return impute;

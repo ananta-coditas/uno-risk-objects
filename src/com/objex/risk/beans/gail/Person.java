@@ -10,6 +10,7 @@ import static com.objex.risk.beans.Germline.BRCA1;
 import static com.objex.risk.beans.Germline.BRCA2;
 import java.util.Arrays;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -66,6 +67,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
         return menarcheAge;
     }
 
+    @XmlElement(namespace="com.objex.risk.beans.gail.Person.Race")
     public Race getRace() {
         return race;
     }
@@ -131,7 +133,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public void setLiveBirthAge(Integer liveBirthAge) {
-        this.liveBirthAge = toInt(liveBirthAge);
+        this.liveBirthAge = liveBirthAge;
     }
 
     public void setMenarcheAge(Integer menarcheAge) {

@@ -19,8 +19,9 @@ public class BRCAResult extends BaseResult {
     
    private Double probabilityMutationBRCA1 = null;
    private Double probabilityMutationBRCA2 = null;
-   private Double probabilityMutationBoth = null;
    public static final String BRCAPRO = "BRCAPRO";
+   public static final String BREAST_RISK =  "breastRisk";
+   public static final String OVARIAN_RISK = "ovarianRisk";
    
    protected static final Map<String,String> columnToFields = new HashMap<>();
    static {
@@ -45,17 +46,6 @@ public class BRCAResult extends BaseResult {
         this.probabilityMutationBRCA2 = probabilityMutationBRCA2;
     }
 
-    public Double getProbabilityMutationBoth() {
-        return probabilityMutationBoth;
-    }
-
-    public void setProbabilityMutationBoth(Double probabilityMutationBoth) {
-        this.probabilityMutationBoth = probabilityMutationBoth;
-    }
-           
-   
-   
-
     @Override
     public void addProbability(String name, Double prob) {
         super.addProbability(name, prob);
@@ -65,9 +55,9 @@ public class BRCAResult extends BaseResult {
         else if ("Pr(BRCA2 mutation)".equals(name)) {
             setProbabilityMutationBRCA2(prob);
         }
-        else if ("Pr(Both genes mutated)".equals(name)) {
-            setProbabilityMutationBoth(prob);
-        }
+        /*else if ("Pr(Both genes mutated)".equals(name)) {
+            setProbabilityCarrier(prob);
+        } */
     }
 
     @Override

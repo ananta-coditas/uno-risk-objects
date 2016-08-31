@@ -19,6 +19,7 @@ import static com.objex.risk.beans.Germline.*;
 @XmlType(namespace="com.objex.risk.beans.brca")
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
+    @XmlType(namespace="com.objex.risk.beans.brca.Person.Ethnic")
     public enum Ethnic  {nonAJ, AJ, Italian, Other, NA }
     private Integer affectedBreastType       = 0;
     private Integer affectedOvarianType      = 0;

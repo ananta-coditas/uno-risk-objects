@@ -33,7 +33,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
               value = code;
           }
     }
-    
+    @XmlType(namespace="com.objex.risk.beans.tcuzick.Person.Ethnic")
     public enum Ethnic  {nonAJ, AJ}
     public enum ParousType { Nulliparous(0),Parous(1),Unknown(2);
         public int value;

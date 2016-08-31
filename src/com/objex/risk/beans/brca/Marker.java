@@ -8,6 +8,7 @@ package com.objex.risk.beans.brca;
 import javax.xml.bind.annotation.XmlRootElement;
 import com.objex.risk.beans.TestResult;
 import static com.objex.risk.beans.TestResult.NONE;
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -17,18 +18,30 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(namespace="com.objex.risk.beans.brca")
 @XmlRootElement(name = "Marker")
-public class Marker implements Cloneable  {
+public class Marker implements Cloneable, Serializable  {
     
 private TestResult er      = NONE;
 private TestResult ck14    = NONE;
 private TestResult ck5_6   = NONE;
 private TestResult pr      = NONE;
 private TestResult her2    = NONE;
+private Integer id         = null;
+private String transId     = null;
 
     @XmlElement(name = "er")
     public TestResult getER() {
         return er;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTransId() {
+        return transId;
+    }
+    
+    
 
     public void setER(TestResult ER) {
         if (ER != null)
@@ -52,9 +65,26 @@ private TestResult her2    = NONE;
         if (CK5_6 != null)
         this.ck5_6 = CK5_6;
     }
+    
+     @XmlElement(name = "ck56")
+    public TestResult getCK56() {
+        return ck5_6;
+    }
+
+    public void setCK56(TestResult CK5_6) {
+        if (CK5_6 != null)
+        this.ck5_6 = CK5_6;
+    }
+    
+    
+    
     @XmlElement(name = "pr")
     public TestResult getPR() {
         return pr;
+    }
+
+    public void setId(Integer Id) {
+        id = Id;
     }
 
     public void setPR(TestResult PR) {
@@ -69,6 +99,10 @@ private TestResult her2    = NONE;
     public void setHER2(TestResult HER2) {
         if (HER2 != null)
         this.her2 = HER2;
+    }
+
+    public void setTransId(String transId) {
+        this.transId = transId;
     }
     
 }

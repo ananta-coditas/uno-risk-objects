@@ -5,6 +5,7 @@
  */
 package com.objex.risk.beans;
 
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +17,7 @@ import javax.xml.bind.annotation.XmlElementWrapper;
  *
  * @author jason
  */
-public abstract class BasePerson implements Cloneable {
+public abstract class BasePerson implements Cloneable, Serializable {
     private Integer age                    = 0;
     private Integer ageOfDeath             = 0;
     private Integer id                     = -1;
@@ -25,6 +26,7 @@ public abstract class BasePerson implements Cloneable {
     private Integer motherId               = 0;
     private Integer testOrder             =  0;
     private boolean proband              = false;
+    private String transId            = null;
     @XmlElementWrapper(name="Germline")
     private Map<String, TestResult> germline = null;
 
@@ -37,11 +39,16 @@ public abstract class BasePerson implements Cloneable {
     public Integer getAgeOfDeath() {
         return ageOfDeath;
     }
+
+    public String getTransId() {
+        return transId;
+    }
     
     @XmlElement(name = "ID")
     public Integer getId() {
         return id;
     }
+     
     public boolean isMother(BasePerson person) {
         if (person == null) {
             return false;
@@ -113,6 +120,10 @@ public abstract class BasePerson implements Cloneable {
         else {
          this.ageOfDeath  = ageOfDeath; 
         }
+    }
+
+    public void setTransId(String transId) {
+        this.transId = transId;
     }
 
     public void setProband(boolean proband) {

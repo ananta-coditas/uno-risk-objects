@@ -5,13 +5,14 @@
  */
 package com.objex.risk.beans;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author jason
  */
-public abstract class BaseRisk implements Cloneable {
+public abstract class BaseRisk implements Cloneable, Serializable {
     //public enum RACE = {};
   
     private String input = null;
@@ -21,11 +22,25 @@ public abstract class BaseRisk implements Cloneable {
     private String penetrance = null; //enum
     boolean saveIncoming = false;
     private String familyId = "";
+    private String transId = null;
+    private String model = "NONE";
 
     public String getFamilyId() {
         return familyId;
     }
 
+    public String getModel() {
+        return "NONE";
+    }
+    
+    protected void setModel(String model) {
+        this.model = model;
+    }
+    
+    public String getTransId() {
+        return transId;
+    }
+    
     public boolean isSaveIncoming() {
         return saveIncoming;
     }
@@ -45,6 +60,7 @@ public abstract class BaseRisk implements Cloneable {
     public void setFamilyId(String familyId) {
         this.familyId = familyId;
     }
+    
     public void setSaveIncoming(boolean saveIncoming) {
         this.saveIncoming = saveIncoming;
     }
@@ -89,5 +105,9 @@ public abstract class BaseRisk implements Cloneable {
     
     public void remove(BasePerson person) {
        getFamily().remove(person);
+    }
+
+    public void setTransId(String transId) {
+        this.transId = transId;
     }
 }

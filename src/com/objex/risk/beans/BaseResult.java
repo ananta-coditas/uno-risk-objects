@@ -20,6 +20,7 @@ public abstract class BaseResult {
     private List<Prediction>  predictions = new ArrayList<Prediction>();
     protected Double probabilityCarrier = null;
     protected String version = "";
+    private String transId = null;
     
     @XmlElement(name="Error")
     private List<RiskError> errors = new ArrayList();
@@ -35,6 +36,12 @@ public abstract class BaseResult {
            setProbabilityCarrier(prob);
         }
     }
+
+    public String getTransId() {
+        return transId;
+    }
+    
+    
 
     public String getVersion() {
         return version;
@@ -70,6 +77,10 @@ public abstract class BaseResult {
     }
 
     public abstract Map<String, String> getColumnToFields();
+
+    public void setTransId(String transId) {
+        this.transId = transId;
+    }
 
     public void setVersion(String version) {
         this.version = version;

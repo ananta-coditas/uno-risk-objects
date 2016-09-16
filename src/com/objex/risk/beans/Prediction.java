@@ -58,6 +58,9 @@ public class Prediction {
         if (colToField.get(name) != null) {
             name = colToField.get(name);
         }
+        if (cancerRisk != null && Double.isNaN(cancerRisk)) {
+            cancerRisk = null;
+        }
         cancerRisks.add(new NameValue(name, cancerRisk));
     }
     public void addColumnMapping(String col, String fieldName) {

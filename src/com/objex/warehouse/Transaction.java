@@ -24,6 +24,7 @@ public class Transaction {
     private TransType type = null;
     private RiskInputs inputs = new RiskInputs();
     private RiskResults results =  new RiskResults();
+    private boolean testing = false;
 
     public Date getCreateDate() {
         return createDate;
@@ -41,6 +42,10 @@ public class Transaction {
         return transId;
     }
 
+    public boolean isTesting() {
+        return testing;
+    }
+
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
@@ -48,6 +53,8 @@ public class Transaction {
     public void setInputs(RiskInputs inputs) {
         this.inputs = inputs;
     }
+    
+    
 
     public void setResults(RiskResults results) {
         this.results = results;
@@ -76,6 +83,10 @@ public class Transaction {
 
     public void setFamilyId(String familyId) {
         this.familyId = familyId;
+    }
+
+    public void setTesting(boolean testing) {
+        this.testing = testing;
     }
 
     public void setTransId(String transId) {

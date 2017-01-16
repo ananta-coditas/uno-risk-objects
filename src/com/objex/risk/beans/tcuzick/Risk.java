@@ -25,6 +25,7 @@ public class Risk extends BaseRisk {
     @XmlElementWrapper(name="Family")
     @XmlElement(name="Person")
     private List<Person> family = new ArrayList<>();
+    private boolean competingMortality = false;
     
     @Override
     public List<Person> getFamily() {
@@ -38,4 +39,14 @@ public class Risk extends BaseRisk {
     public String getModel() {
         return TYRER;
     }
+
+    public boolean isCompetingMortality() {
+        return competingMortality;
+    }
+
+    public void setCompetingMortality(boolean competingMortality) {
+        this.competingMortality = competingMortality;
+    }
+    
+    
 }

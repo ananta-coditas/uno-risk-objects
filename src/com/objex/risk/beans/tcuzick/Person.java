@@ -53,13 +53,22 @@ public class Person extends com.objex.risk.beans.BasePerson {
             value = code;
         }
     };
+     
+     public enum DensityMeasure { VOLPRA(0),VAS(1),BIRADS(2),NONE(-99);
+      public int value;
+        DensityMeasure(int code) {
+            value = code;
+        }
+    };
     
-   
     private Integer menarcheAge = -99;
     private Integer menopauseAge = -99;
     private MenosType menostat = MenosType.Unknown;
     private Double height = -99d; //meters
     private Double weight = -99d; //kgs
+    private DensityMeasure densityMeasure = DensityMeasure.NONE;
+    private Double densityValue = 0d;
+    private Double polygenicSNP = 0d;
     private Boolean hasLiveBirth = null;
     private Integer liveBirthAge = -99;
     private HyperplasiaType hyperplasia = HyperplasiaType.NONE;
@@ -90,12 +99,24 @@ public class Person extends com.objex.risk.beans.BasePerson {
         return affectedBreastType;
     }
 
+    public DensityMeasure getDensityMeasure() {
+        return densityMeasure;
+    }
+
+    public Double getDensityValue() {
+        return densityValue;
+    }
+
     public Double getHeight() {
         return height;
     }
 
     public HRTType getHrtType() {
         return hrtType;
+    }
+
+    public Double getPolygenicSNP() {
+        return polygenicSNP;
     }
 
     public HRTUse getUsedHRT() {
@@ -181,6 +202,14 @@ public class Person extends com.objex.risk.beans.BasePerson {
 
     public Double getYearsSinceHRT() {
         return yearsSinceHRT;
+    }
+
+    public void setDensityMeasure(DensityMeasure densityMeasure) {
+        this.densityMeasure = densityMeasure;
+    }
+
+    public void setDensityValue(Double densityValue) {
+        this.densityValue = densityValue;
     }
     /**
      * Age of onset of ovarian cancer if an ovarian cancer case.  Current age or 
@@ -308,6 +337,10 @@ public class Person extends com.objex.risk.beans.BasePerson {
 
     public void setHrtType(HRTType hrtType) {
         this.hrtType = hrtType;
+    }
+
+    public void setPolygenicSNP(Double polygenicSNP) {
+        this.polygenicSNP = polygenicSNP;
     }
 
     public void setUsedHRT(HRTUse hrtUse) {

@@ -67,7 +67,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private Double height = -99d; //meters
     private Double weight = -99d; //kgs
     private DensityMeasure densityMeasure = DensityMeasure.NONE;
-    private Double densityValue = 0d;
+    private Double densityValue = -99d;
     private Double polygenicSNP = 0d;
     private Boolean hasLiveBirth = null;
     private Integer liveBirthAge = -99;
@@ -104,6 +104,9 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
     public Double getDensityValue() {
+        if (densityValue == null || densityValue == 0) {
+            densityValue = -99d;
+        }
         return densityValue;
     }
 

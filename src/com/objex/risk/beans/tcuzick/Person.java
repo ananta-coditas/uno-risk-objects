@@ -209,10 +209,17 @@ public class Person extends com.objex.risk.beans.BasePerson {
 
     public void setDensityMeasure(DensityMeasure densityMeasure) {
         this.densityMeasure = densityMeasure;
+        if (densityMeasure == null) {
+            this.densityMeasure = DensityMeasure.NONE;
+        }
     }
 
     public void setDensityValue(Double densityValue) {
         this.densityValue = densityValue;
+        if (densityValue == null) {
+            this.densityValue = -99d;
+        }
+       
     }
     /**
      * Age of onset of ovarian cancer if an ovarian cancer case.  Current age or 
@@ -344,6 +351,10 @@ public class Person extends com.objex.risk.beans.BasePerson {
 
     public void setPolygenicSNP(Double polygenicSNP) {
         this.polygenicSNP = polygenicSNP;
+        if (polygenicSNP == null) {
+            this.polygenicSNP = 0d;
+        }
+        
     }
 
     public void setUsedHRT(HRTUse hrtUse) {

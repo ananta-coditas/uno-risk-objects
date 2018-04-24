@@ -26,7 +26,6 @@ public class Person extends com.objex.risk.beans.BasePerson {
     private Integer diagnoseBreastAge     = 0;
     private Integer diagnoseOvarianAge     = 0;
     private Integer diagnoseBreastContralateralAge     = 0;
-    private Integer twin      = 0; 
     private Ethnic ethnic     =  Ethnic.nonAJ;
     
     private boolean performedMasectomy  = false;
@@ -156,13 +155,6 @@ public class Person extends com.objex.risk.beans.BasePerson {
         this.diagnoseBreastContralateralAge = toInt(diagnoseBreastContralateralAge);
     }
 
-    public Integer getTwin() {
-        return twin;
-    }
-
-    public void setTwin(Integer twin) {
-        this.twin = twin;
-    }
 
     public Ethnic getEthnic() {
         return ethnic;

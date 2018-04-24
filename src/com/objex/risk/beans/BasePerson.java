@@ -29,6 +29,7 @@ public abstract class BasePerson implements Cloneable, Serializable {
     private String transId            = null;
     @XmlElementWrapper(name="Germline")
     private Map<String, TestResult> germline = null;
+    protected Integer twin = 0;
 
     @XmlElement(name = "age")
     public Integer getAge() {
@@ -47,6 +48,10 @@ public abstract class BasePerson implements Cloneable, Serializable {
     @XmlElement(name = "ID")
     public Integer getId() {
         return id;
+    }
+
+    public Integer getTwin() {
+        return twin;
     }
      
     public boolean isMother(BasePerson person) {
@@ -128,6 +133,10 @@ public abstract class BasePerson implements Cloneable, Serializable {
 
     public void setProband(boolean proband) {
         this.proband = proband;
+    }
+
+    public void setTwin(Integer twin) {
+        this.twin = twin;
     }
     protected Integer toInt(Integer inValue) {
         if (inValue == null) {

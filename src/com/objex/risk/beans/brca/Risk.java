@@ -26,6 +26,7 @@ public class Risk extends com.objex.risk.beans.BaseRisk {
     @XmlElement(name="Person")
     private List<Person> family = new ArrayList<>();
     private boolean impute = true;
+    private boolean imputeRelatives = true;
     private Double sensitivity1 = null;
     private Double sensitivity2 = null;
     private Double specificity1 = null;
@@ -47,6 +48,15 @@ public class Risk extends com.objex.risk.beans.BaseRisk {
 
     public void setImpute(boolean impute) {
         this.impute = impute;
+    }
+    
+     public boolean isImputeRelatives() {
+        return imputeRelatives;
+    }
+    
+
+    public void setImputeRelatives(boolean impute) {
+        this.imputeRelatives = impute;
     }
      public Double getSensitivity1() {
             return sensitivity1;

@@ -25,6 +25,8 @@ public class Risk extends BaseRisk {
     @XmlElementWrapper(name="Family")
     @XmlElement(name="Person")
     private List<Person> family = new ArrayList<>();
+    private boolean impute;
+    private boolean imputeRelatives;
     private Double sensitivity = null;
     private Double specificity = null;
     @Override
@@ -54,5 +56,22 @@ public class Risk extends BaseRisk {
 
     public void setSpecificity(Double specificity) {
         this.specificity = specificity;
-    }   
+    } 
+        public boolean isImpute() {
+        return impute;
+    }
+    
+
+    public void setImpute(boolean impute) {
+        this.impute = impute;
+    }
+    
+     public boolean isImputeRelatives() {
+        return imputeRelatives;
+    }
+    
+
+    public void setImputeRelatives(boolean impute) {
+        this.imputeRelatives = impute;
+    }
 }

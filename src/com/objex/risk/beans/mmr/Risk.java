@@ -26,8 +26,8 @@ public class Risk extends BaseRisk {
     @XmlElementWrapper(name="Family")
     @XmlElement(name="Person")
     private List<Person> family = new ArrayList<>();
-    private boolean impute;
-    private boolean imputeRelatives;
+    private boolean impute = true;
+    private boolean imputeRelatives = true;
     private Double sensitivity1 = null;
     private Double sensitivity2 = null;
     private Double sensitivity3 = null;

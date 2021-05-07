@@ -30,6 +30,14 @@ public abstract class BasePerson implements Cloneable, Serializable {
     @XmlElementWrapper(name="Germline")
     private Map<String, TestResult> germline = null;
     protected Integer twin = 0;
+    private VitalStatus vitalStatus = VitalStatus.ALIVE;
+    
+    public enum VitalStatus { ALIVE(0),DEAD(1);
+          public int value;
+          VitalStatus(int code) {
+              value = code;
+          }
+    }
 
     @XmlElement(name = "age")
     public Integer getAge() {
@@ -225,5 +233,19 @@ public abstract class BasePerson implements Cloneable, Serializable {
     }
 
     protected abstract List<String> germLines();
+
+    /**
+     * @return the vitalStatus
+     */
+    public VitalStatus getVitalStatus() {
+        return vitalStatus;
+    }
+
+    /**
+     * @param vitalStatus the vitalStatus to set
+     */
+    public void setVitalStatus(VitalStatus vitalStatus) {
+        this.vitalStatus = vitalStatus;
+    }
     
 }

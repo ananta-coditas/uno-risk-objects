@@ -31,12 +31,25 @@ public abstract class BasePerson implements Cloneable, Serializable {
     private Map<String, TestResult> germline = null;
     protected Integer twin = 0;
     private VitalStatus vitalStatus = VitalStatus.ALIVE;
-    
-    public enum VitalStatus { ALIVE(0),DEAD(1);
-          public int value;
-          VitalStatus(int code) {
-              value = code;
-          }
+
+    public enum VitalStatus {
+        ALIVE(0), DEAD(1);
+        public int value;
+
+        VitalStatus(int code) {
+            value = code;
+        }
+
+        public static VitalStatus valueOf(int value) {
+            switch (value) {
+                case 0:
+                    return ALIVE;
+                case 1:
+                    return DEAD;
+                default:
+                    return null;
+            }
+        }
     }
 
     @XmlElement(name = "age")

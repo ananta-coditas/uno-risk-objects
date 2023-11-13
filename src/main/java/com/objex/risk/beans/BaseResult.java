@@ -5,22 +5,37 @@
  */
 package com.objex.risk.beans;
 
+import com.objex.risk.beans.brca.BRCAResult;
+import com.objex.risk.beans.charts.ChartResult;
+import com.objex.risk.beans.claus.ClausResult;
+import com.objex.risk.beans.gail.GailResult;
+import com.objex.risk.beans.mela.MelaResult;
+import com.objex.risk.beans.mmr.MMRResult;
+import com.objex.risk.beans.panc.PancResult;
+import com.objex.risk.beans.premm.PREMMResult;
+import com.objex.risk.beans.tcuzick.TyrerResult;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlTransient;
 
 
 /**
  *
  * @author jason
  * */
+@XmlSeeAlso({TyrerResult.class,GailResult.class,ChartResult.class,MMRResult.class,BRCAResult.class,PancResult.class,MelaResult.class,PREMMResult.class,ClausResult.class})
 public abstract class BaseResult {
     @XmlElement(name="Prediction")
     private List<Prediction>  predictions = new ArrayList<Prediction>();
     protected Double probabilityCarrier = null;
     protected String version = "";
     private String transId = null;
+    private Integer chartCode = null;
+    private String encodedChart = null;
     
     @XmlElement(name="Error")
     private List<RiskError> errors = new ArrayList();
@@ -95,5 +110,49 @@ public abstract class BaseResult {
     
     public List<RiskError> getErrors() {
         return errors;
+    }
+
+    /**
+     * @return the chartCode
+     */
+    public Integer getChartCode() {
+        return chartCode;
+    }
+
+    /**
+     * @param chartCode the chartCode to set
+     */
+    public void setChartCode(Integer chartCode) {
+        this.chartCode = chartCode;
+    }
+
+    /**
+     * @return the chartImage
+     */
+    public String getEncodedChart() {
+        return encodedChart;
+    }
+
+    /**
+     * @param chartImage the chartImage to set as base64
+     */
+    public void setEncodedChart(String chartImage) {
+        this.encodedChart = chartImage;
+    }
+    /**
+     * 
+     * @return 
+     */
+     @XmlTransient
+     public byte[] getChart() {
+        return Base64.getDecoder().decode(encodedChart);
+    }
+    
+     public void setChart(byte[] chart) {
+        if (chart == null) {
+            setEncodedChart(null);
+        } else {
+            setEncodedChart(Base64.getEncoder().encodeToString(chart));
+        }
     }
 }

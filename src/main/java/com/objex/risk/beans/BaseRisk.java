@@ -15,6 +15,7 @@ import java.util.List;
 public abstract class BaseRisk implements Cloneable, Serializable {
     //public enum RACE = {};
   
+    public static final Integer DEFAULT_CHART = 1;
     private String input = null;
     private boolean consent = false;
     private int ageBy = 5;
@@ -24,6 +25,7 @@ public abstract class BaseRisk implements Cloneable, Serializable {
     private String familyId = "";
     private String transId = null;
     private String model = "NONE";
+    private Integer chartCode = null;
 
     public String getFamilyId() {
         return familyId;
@@ -109,5 +111,19 @@ public abstract class BaseRisk implements Cloneable, Serializable {
 
     public void setTransId(String transId) {
         this.transId = transId;
+    }
+
+    /**
+     * @return the chartCode
+     */
+    public Integer getChartCode() {
+        return chartCode;
+    }
+
+    /**
+     * @param chartCode the chartCode to set
+     */
+    public void setChartCode(Integer chartCode) {
+        this.chartCode = chartCode;
     }
 }

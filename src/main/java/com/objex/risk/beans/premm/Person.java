@@ -22,7 +22,6 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public static final String MLH1 = "MLH1";
     public static final String MSH2 = "MSH2";
     public static final String MSH6 = "MSH6";
-    public static final String PMS2 = "PMS2";
             
     private AffectedType affectedColonType       =  AffectedType.NONE;
     private AffectedType affectedEndometriumType = AffectedType.NONE;

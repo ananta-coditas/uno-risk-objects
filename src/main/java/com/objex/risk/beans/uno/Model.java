@@ -20,7 +20,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Model {
     
-    private String name         = null;
+    public enum ModelName {BRCAPRO,MMRPRO,MELAPRO,PANCPRO,PREMM,GAIL,TYRER,CLAUS,NCCN}
+    private ModelName name         = null;
     private int ageBy        = 0;
     private int ageTo        = 0;
     private String saveIncoming = null;
@@ -33,14 +34,14 @@ public class Model {
     /**
      * @return the name
      */
-    public String getName() {
+    public ModelName getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    public void setName(String name) {
+    public void setName(ModelName name) {
         this.name = name;
     }
 

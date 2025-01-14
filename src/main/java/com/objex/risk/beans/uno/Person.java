@@ -38,7 +38,8 @@ public class Person extends BasePerson {
     @XmlType(namespace="com.objex.risk.beans.uno.Person.Ethnic")
     public enum Ethnic  {nonAJ, AJ, Italian, Other, NA }
     
-    public enum FamilyRace  {Unknown, Hispanic, Asian, Black, NativeAmerican,White }   
+    public enum FamilyRace  {Unknown, Hispanic, Asian, Black, NativeAmerican,White } 
+    public enum NCCNEnum  {Yes,No,Unknown } 
 
 
     private boolean performedBiopsy  = false;
@@ -90,6 +91,8 @@ public class Person extends BasePerson {
     private Double yearsPastHRT = 0d;
     private Double yearsFutureHRT = 0d;
     private Double yearsSinceHRT = 0d;
+    private NCCNEnum polypOverall = NCCNEnum.No;
+    private PolypDetails polypDetails = null;
 @XmlElementWrapper(name="Cancers")
 @XmlElement(name="Cancer")
 private List<Cancer> cancers = new ArrayList<>();
@@ -171,9 +174,9 @@ private List<Cancer> cancers = new ArrayList<>();
     
     public ParousType getParous() {
        ParousType parous =  ParousType.Nulliparous;
-        if (hasLiveBirth == null) {
+        if (getHasLiveBirth() == null) {
             parous =  ParousType.Unknown;
-        } else if (hasLiveBirth) {
+        } else if (getHasLiveBirth()) {
              parous =  ParousType.Parous;
         }
         
@@ -542,6 +545,41 @@ private List<Cancer> cancers = new ArrayList<>();
      */
     public void setFamilyRace(FamilyRace familyRace) {
         this.familyRace = familyRace;
+    }
+
+    /**
+     * @param parous the parous to set
+     */
+    public void setParous(ParousType parous) {
+        this.parous = parous;
+    }
+
+    /**
+     * @return the polypOverall
+     */
+    public NCCNEnum getPolypOverall() {
+        return polypOverall;
+    }
+
+    /**
+     * @param polypOverall the polypOverall to set
+     */
+    public void setPolypOverall(NCCNEnum polypOverall) {
+        this.polypOverall = polypOverall;
+    }
+
+    /**
+     * @return the polypDetails
+     */
+    public PolypDetails getPolypDetails() {
+        return polypDetails;
+    }
+
+    /**
+     * @param polypDetails the polypDetails to set
+     */
+    public void setPolypDetails(PolypDetails polypDetails) {
+        this.polypDetails = polypDetails;
     }
 
     

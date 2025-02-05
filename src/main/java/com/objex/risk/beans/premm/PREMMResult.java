@@ -19,6 +19,7 @@ public class PREMMResult extends BaseResult {
     private Double probabilityMutationMLH1 = null;
     private Double probabilityMutationMSH2 = null;
     private Double probabilityMutationMSH6 = null;
+    private Double probabilityMutationPMS2 = null;
     public static final String PREMM = "PREMM";
     
     protected static final Map<String,String> columnToFields = new HashMap<>();
@@ -62,6 +63,14 @@ public class PREMMResult extends BaseResult {
 
     public void setProbabilityMutationMSH6(Double percentMutationMSH6) {
         this.probabilityMutationMSH6 = percentMutationMSH6;
+    }
+    
+      public Double getProbabilityMutationPMS2() {
+        return probabilityMutationPMS2;
+    }
+
+    public void setProbabilityMutationPMS2(Double probabilityMutationPMS2) {
+        this.probabilityMutationPMS2 = probabilityMutationPMS2;
     }
 
     @Override

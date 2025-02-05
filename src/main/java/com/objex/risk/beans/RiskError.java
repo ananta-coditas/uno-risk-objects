@@ -15,48 +15,32 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class RiskError {
     private String description = "";
     private Integer personId = 0;
-    private String code = "";
+
+    public Integer getCode() {
+        return personId;
+    }
 
     public RiskError() {}
     
-    public RiskError(Integer personId, String desc, String code) {
+    public RiskError(Integer personId, String desc) {
         this.personId = personId;
         this.description = desc;
-        this.code = code;
     }
     
     public RiskError(String desc) {
-        this(0,desc,desc);
+        this(0,desc);
     }
     
     public String getDescription() {
         return description;
     }
-    
-        public Integer getPersonId() {
-        return personId;
-    }
 
-    public void setPersonId(Integer id) {
-        this.personId = id;
+    public void setCode(Integer code) {
+        this.personId = code;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    /**
-     * @return the code
-     */
-    public String getCode() {
-        return code;
-    }
-
-    /**
-     * @param code the code to set
-     */
-    public void setCode(String code) {
-        this.code = code;
     }
     
     

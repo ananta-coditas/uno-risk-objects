@@ -5,13 +5,15 @@
  */
 package com.objex.risk.beans.uno;
 
-import com.objex.risk.beans.BaseRisk;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import com.objex.risk.beans.BaseRisk;
 
 /**
  *
@@ -36,6 +38,10 @@ public class Risk extends BaseRisk {
     public List<Model> getRequestedModels() {
         return requestedModels;
     }
-
-
+    public void setRequestedModels(List<Model> requestedModels) {
+        this.requestedModels = requestedModels;
+    }
+    public void setFamily(List<Person> family) {
+        this.family = family;
+    }
 }

@@ -4,9 +4,14 @@
  */
 package com.objex.risk.beans.nccn;
 
+import java.util.Map;
+import java.util.Set;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.objex.risk.beans.BaseResult;
 
 /**
  *
@@ -14,150 +19,124 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "NCCNResult")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class NCCNResult {
-    
-   
-    private String hbocOverall = null;
-    private CriteriaMet hbocCriteriaMet = null;
-    private CriteriaMetId hbocCriteriaMetId = null;
-    
-    private String lynchOverall = null;
-    private CriteriaMet lynchCriteriaMet = null;
-    private CriteriaMetId lynchCriteriaMetId = null;
-    
-    
-    private String absApcOverall = null;
-    private CriteriaMet absApcCriteriaMet = null;
-    private CriteriaMetId absApcCriteriaMetId = null;
+public class NCCNResult extends BaseResult {
 
-    /**
-     * @return the hbocOverall
-     */
+    private String hbocVersion;
+    private String crcVersion;
+    private String hbocOverall;
+    private Set<String> hbocCriteriaMet;
+    private Set<String> hbocCriteriaMetIds;
+    private String lynchOverall;
+    private Set<String> lynchCriteriaMet;
+    private Set<String> lynchCriteriaMetIds;
+    private String apsApcOverall;
+    private Set<String> apsApcCriteriaMet;
+    private Set<String> apsApcCriteriaMetIds;
+    private String dateAssessed;
+
+    public String getHbocVersion() {
+        return hbocVersion;
+    }
+
+    public void setHbocVersion(String hbocVersion) {
+        this.hbocVersion = hbocVersion;
+    }
+
+    public String getCrcVersion() {
+        return crcVersion;
+    }
+
+    public void setCrcVersion(String crcVersion) {
+        this.crcVersion = crcVersion;
+    }
+
     public String getHbocOverall() {
         return hbocOverall;
     }
 
-    /**
-     * @param hbocOverall the hbocOverall to set
-     */
     public void setHbocOverall(String hbocOverall) {
         this.hbocOverall = hbocOverall;
     }
 
-    /**
-     * @return the hbocCriteriaMet
-     */
-    public CriteriaMet getHbocCriteriaMet() {
+    public Set<String> getHbocCriteriaMet() {
         return hbocCriteriaMet;
     }
 
-    /**
-     * @param hbocCriteriaMet the hbocCriteriaMet to set
-     */
-    public void setHbocCriteriaMet(CriteriaMet hbocCriteriaMet) {
+    public void setHbocCriteriaMet(Set<String> hbocCriteriaMet) {
         this.hbocCriteriaMet = hbocCriteriaMet;
     }
 
-    /**
-     * @return the hbocCriteriaMetId
-     */
-    public CriteriaMetId getHbocCriteriaMetId() {
-        return hbocCriteriaMetId;
+    public Set<String> getHbocCriteriaMetIds() {
+        return hbocCriteriaMetIds;
     }
 
-    /**
-     * @param hbocCriteriaMetId the hbocCriteriaMetId to set
-     */
-    public void setHbocCriteriaMetId(CriteriaMetId hbocCriteriaMetId) {
-        this.hbocCriteriaMetId = hbocCriteriaMetId;
+    public void setHbocCriteriaMetIds(Set<String> hbocCriteriaMetIds) {
+        this.hbocCriteriaMetIds = hbocCriteriaMetIds;
     }
 
-    /**
-     * @return the lynchOverall
-     */
     public String getLynchOverall() {
         return lynchOverall;
     }
 
-    /**
-     * @param lynchOverall the lynchOverall to set
-     */
     public void setLynchOverall(String lynchOverall) {
         this.lynchOverall = lynchOverall;
     }
 
-    /**
-     * @return the lynchCriteriaMet
-     */
-    public CriteriaMet getLynchCriteriaMet() {
+    public Set<String> getLynchCriteriaMet() {
         return lynchCriteriaMet;
     }
 
-    /**
-     * @param lynchCriteriaMet the lynchCriteriaMet to set
-     */
-    public void setLynchCriteriaMet(CriteriaMet lynchCriteriaMet) {
+    public void setLynchCriteriaMet(Set<String> lynchCriteriaMet) {
         this.lynchCriteriaMet = lynchCriteriaMet;
     }
 
-    /**
-     * @return the lynchCriteriaMetId
-     */
-    public CriteriaMetId getLynchCriteriaMetId() {
-        return lynchCriteriaMetId;
+    public Set<String> getLynchCriteriaMetIds() {
+        return lynchCriteriaMetIds;
     }
 
-    /**
-     * @param lynchCriteriaMetId the lynchCriteriaMetId to set
-     */
-    public void setLynchCriteriaMetId(CriteriaMetId lynchCriteriaMetId) {
-        this.lynchCriteriaMetId = lynchCriteriaMetId;
+    public void setLynchCriteriaMetIds(Set<String> lynchCriteriaMetIds) {
+        this.lynchCriteriaMetIds = lynchCriteriaMetIds;
     }
 
-    /**
-     * @return the absApcOverall
-     */
-    public String getAbsApcOverall() {
-        return absApcOverall;
+    public String getApsApcOverall() {
+        return apsApcOverall;
     }
 
-    /**
-     * @param absApcOverall the absApcOverall to set
-     */
-    public void setAbsApcOverall(String absApcOverall) {
-        this.absApcOverall = absApcOverall;
+    public void setApsApcOverall(String apsApcOverall) {
+        this.apsApcOverall = apsApcOverall;
     }
 
-    /**
-     * @return the absApcCriteriaMet
-     */
-    public CriteriaMet getAbsApcCriteriaMet() {
-        return absApcCriteriaMet;
+    public Set<String> getApsApcCriteriaMet() {
+        return apsApcCriteriaMet;
     }
 
-    /**
-     * @param absApcCriteriaMet the absApcCriteriaMet to set
-     */
-    public void setAbsApcCriteriaMet(CriteriaMet absApcCriteriaMet) {
-        this.absApcCriteriaMet = absApcCriteriaMet;
+    public void setApsApcCriteriaMet(Set<String> apsApcCriteriaMet) {
+        this.apsApcCriteriaMet = apsApcCriteriaMet;
     }
 
-    /**
-     * @return the absApcCriteriaMetId
-     */
-    public CriteriaMetId getAbsApcCriteriaMetId() {
-        return absApcCriteriaMetId;
+    public Set<String> getApsApcCriteriaMetIds() {
+        return apsApcCriteriaMetIds;
     }
 
-    /**
-     * @param absApcCriteriaMetId the absApcCriteriaMetId to set
-     */
-    public void setAbsApcCriteriaMetId(CriteriaMetId absApcCriteriaMetId) {
-        this.absApcCriteriaMetId = absApcCriteriaMetId;
+    public void setApsApcCriteriaMetIds(Set<String> apsApcCriteriaMetIds) {
+        this.apsApcCriteriaMetIds = apsApcCriteriaMetIds;
     }
-       
-    
-    
-     
-    
+
+    public String getDateAssessed() {
+        return dateAssessed;
+    }
+
+    public void setDateAssessed(String dateAssessed) {
+        this.dateAssessed = dateAssessed;
+    }
+
+    @Override
+    public String getModel() {
+        return null;
+    }
+
+    @Override
+    public Map<String, String> getColumnToFields() {
+        return null;
+    }
 }

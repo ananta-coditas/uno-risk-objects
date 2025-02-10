@@ -4,6 +4,7 @@
  */
 package com.objex.risk.beans.uno;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -17,10 +18,10 @@ import com.objex.risk.beans.uno.Model.ModelName;
  *
  * @author jward
  */
-@XmlRootElement(name = "CombinedResult")
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlRootElement(name = "CombinedResult")
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class CombinedResult {
-    private Map<ModelName, BaseResult> results;
+    private Map<ModelName, BaseResult> results = new HashMap<>();
 
     public Map<ModelName, BaseResult> getResults() {
         return results;

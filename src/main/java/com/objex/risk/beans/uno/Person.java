@@ -32,18 +32,25 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Person extends BasePerson {
 
-    //@XmlType(namespace="com.objex.risk.beans.uno.Person.Ethnic")
-    //public enum Ethnic  {nonAJ, AJ}
-     
-    @XmlType(namespace="com.objex.risk.beans.uno.Person.Ethnic")
-    public enum Ethnic  {nonAJ, AJ, Italian, Other, NA }
-    
-    public enum FamilyRace  {Unknown, Hispanic, Asian, Black, NativeAmerican,White } 
-    public enum NCCNEnum  {Yes,No,Unknown } 
+    // @XmlType(namespace="com.objex.risk.beans.uno.Person.Ethnic")
+    // public enum Ethnic {nonAJ, AJ}
 
+    @XmlType(namespace = "com.objex.risk.beans.uno.Person.Ethnic")
+    public enum Ethnic {
+        nonAJ, AJ, Italian, Other, NA
+    }
 
-    private boolean performedBiopsy  = false;
-    private Integer biopsyCount = 0;  
+    public enum FamilyRace {
+        Unknown, Hispanic, Asian, Black, NativeAmerican, White, AfricanAmerican, Caucasian, 
+        FrenchCanadian, HispanicLatino, Jewish_Ashkenazi,Jewish_Non_Ashkenazi, MiddleEastern, Portuguese, Other
+    }
+
+    public enum NCCNEnum {
+        YES, NO, NOT_PROVIDED
+    }
+
+    private boolean performedBiopsy = false;
+    private Integer biopsyCount = 0;
     private Integer menarcheAge = 0;
     private Boolean hasLiveBirth = false;
     private Integer liveBirthAge = 0;
@@ -55,51 +62,51 @@ public class Person extends BasePerson {
     private boolean hasMantleRadiation = false;
     private com.objex.risk.beans.gail.Person.Race race = null;
     private FamilyRace familyRace = FamilyRace.Unknown;
-    //private Integer affectedBreastType       = 0;
-    //private Integer affectedOvarianType      = 0;
-   // private Integer diagnoseBreastAge     = 0;
-   // private Integer diagnoseOvarianAge     = 0;
-    //private Integer diagnoseBreastContralateralAge     = 0;
-    private Ethnic ethnic     =  Ethnic.nonAJ;
+    // private Integer affectedBreastType = 0;
+    // private Integer affectedOvarianType = 0;
+    // private Integer diagnoseBreastAge = 0;
+    // private Integer diagnoseOvarianAge = 0;
+    // private Integer diagnoseBreastContralateralAge = 0;
+    private Ethnic ethnic = Ethnic.nonAJ;
     private ParousType parous = null;
-    private boolean performedMasectomy  = false;
+    private boolean performedMasectomy = false;
     private Integer ageMasectomy = 1;
-    
-    private boolean performedOophorectomy  = false;
+
+    private boolean performedOophorectomy = false;
     private Integer ageOophorectomy = 1;
-    //private Integer menarcheAge = -99;
+    // private Integer menarcheAge = -99;
     private Integer menopauseAge = -99;
     private MenosType menostat = MenosType.Unknown;
-    private Double height = -99d; //meters
-    private Double weight = -99d; //kgs
+    private Double height = -99d; // meters
+    private Double weight = -99d; // kgs
     private DensityMeasure densityMeasure = DensityMeasure.NONE;
     private Double densityValue = -99d;
     private Double polygenicSNP = 0d;
-    //private Boolean hasLiveBirth = null;
-    //private Integer liveBirthAge = -99;
-    
-    //private boolean hasLCIS = false;
-    //private Ethnic ethnic     =  Ethnic.nonAJ;
-    //private AffectedType affectedBreastType = AffectedType.NONE;
-    //private AffectedType affectedOvarianType = AffectedType.NONE;
-    //private AffectedType affectedBilateralBreastType = AffectedType.NONE;
-    //private Integer diagnoseOvarianAge     = 0;
-    //private Integer diagnoseBreastAge     = 0;
-    //private Integer diagnoseBilateralBreastAge     = 0;
+    // private Boolean hasLiveBirth = null;
+    // private Integer liveBirthAge = -99;
+
+    // private boolean hasLCIS = false;
+    // private Ethnic ethnic = Ethnic.nonAJ;
+    // private AffectedType affectedBreastType = AffectedType.NONE;
+    // private AffectedType affectedOvarianType = AffectedType.NONE;
+    // private AffectedType affectedBilateralBreastType = AffectedType.NONE;
+    // private Integer diagnoseOvarianAge = 0;
+    // private Integer diagnoseBreastAge = 0;
+    // private Integer diagnoseBilateralBreastAge = 0;
     private HRTUse usedHRT = HRTUse.NEVER;
     private HRTType hrtType = null;
     private Double yearsPastHRT = 0d;
     private Double yearsFutureHRT = 0d;
     private Double yearsSinceHRT = 0d;
-    private NCCNEnum polypOverall = NCCNEnum.No;
+    private NCCNEnum polypOverall = NCCNEnum.NOT_PROVIDED;
     private PolypDetails polypDetails = null;
-@XmlElementWrapper(name="Cancers")
-@XmlElement(name="Cancer")
-private List<Cancer> cancers = new ArrayList<>();
+    @XmlElementWrapper(name = "Cancers")
+    @XmlElement(name = "Cancer")
+    private List<Cancer> cancers = new ArrayList<>();
 
     @Override
     protected List<String> germLines() {
-        return Arrays.asList(MLH1,MSH2,MSH6);
+        return Arrays.asList(MLH1, MSH2, MSH6);
     }
 
     /**
@@ -171,16 +178,16 @@ private List<Cancer> cancers = new ArrayList<>();
     public void setWeight(Double weight) {
         this.weight = weight;
     }
-    
+
     public ParousType getParous() {
-       ParousType parous =  ParousType.Nulliparous;
+        ParousType parous = ParousType.Nulliparous;
         if (getHasLiveBirth() == null) {
-            parous =  ParousType.Unknown;
+            parous = ParousType.Unknown;
         } else if (getHasLiveBirth()) {
-             parous =  ParousType.Parous;
+            parous = ParousType.Parous;
         }
-        
-       return parous;
+
+        return parous;
     }
 
     /**
@@ -582,5 +589,4 @@ private List<Cancer> cancers = new ArrayList<>();
         this.polypDetails = polypDetails;
     }
 
-    
 }

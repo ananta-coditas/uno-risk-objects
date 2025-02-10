@@ -16,12 +16,28 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Cancer")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cancer {
-    
-    public enum CancerType  {BREAST, OVARIAN, COLORECTAL, ENDOMETRIAL, NA }
-    
+
+    public enum CancerType {
+
+        BREAST(""), OVARIAN(""), COLORECTAL(""), ENDOMETRIAL(""), NA(""), Gastric(""), Uterine(""), SmallIntestine(""),
+        Fallopian(""), Biliary(""), Ureter(""), DESMOIDS(""), Blood(""), PRELEUKEMIA(""), LEUKEMIA(""), LYMPHOMA(""),
+        Fallopian_Tube("Fallopian Tube"), SEBACEOUS_CARCINOMA("Sebaceous Carcinoma"),
+        SEBACEOUS_ADENOMAS("Sebaceous_adenomas"), SKIN("SKIN");
+
+        String description;
+
+        CancerType(String description) {
+            this.description = description;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+    }
+
     private CancerType cancerType = null;
     private Integer diagnoseAge = 0;
-    private Integer affected = null; 
+    private Integer affected = null;
     @XmlElement(name = "CancerDetails")
     private CancerDetails cancerDetails = null;
 
@@ -80,5 +96,5 @@ public class Cancer {
     public void setCancerDetails(CancerDetails cancerDetails) {
         this.cancerDetails = cancerDetails;
     }
-        
+
 }

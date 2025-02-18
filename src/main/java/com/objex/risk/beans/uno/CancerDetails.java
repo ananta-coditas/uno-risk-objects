@@ -4,6 +4,8 @@
  */
 package com.objex.risk.beans.uno;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -15,16 +17,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "CancerDetails")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CancerDetails {
-private String contralateral    = null;            
-private String contralateralAge = null;            
-private String bilateral        = null;            
-private String bilateralAge     = null;
-private String metastatic                 = null; 
-private String breastMultiplePrimaries    = null; 
-private String pathology                  = null; 
-private String breastEr                   = null; 
-private String prostateGleasonScore       = null; 
-private String prostateRiskGroup          = null;
+    private String contralateral    = null;
+    private String contralateralAge = null;
+    private String bilateral = null;
+    private String bilateralAge = null;
+    private String metastatic = null;
+    private String breastMultiplePrimaries = null;
+    private List<BreastCancerType> breastCancerTypes = null;
+    private String breastTrippleNegative = null;
+    private String prostateGleasonScore = null;
+    private String prostateRiskGroup = null;
 
     /**
      * @return the contralateral
@@ -39,7 +41,6 @@ private String prostateRiskGroup          = null;
     public void setContralateral(String contralateral) {
         this.contralateral = contralateral;
     }
-
     /**
      * @return the contralateralAge
      */
@@ -110,32 +111,12 @@ private String prostateRiskGroup          = null;
         this.breastMultiplePrimaries = breastMultiplePrimaries;
     }
 
-    /**
-     * @return the pathology
-     */
-    public String getPathology() {
-        return pathology;
+    public List<BreastCancerType> getBreastCancerTypes() {
+        return breastCancerTypes;
     }
 
-    /**
-     * @param pathology the pathology to set
-     */
-    public void setPathology(String pathology) {
-        this.pathology = pathology;
-    }
-
-    /**
-     * @return the breastEr
-     */
-    public String getBreastEr() {
-        return breastEr;
-    }
-
-    /**
-     * @param breastEr the breastEr to set
-     */
-    public void setBreastEr(String breastEr) {
-        this.breastEr = breastEr;
+    public void setBreastCancerTypes( List<BreastCancerType> breastCancerType) {
+        this.breastCancerTypes = breastCancerType;
     }
 
     /**
@@ -165,4 +146,13 @@ private String prostateRiskGroup          = null;
     public void setProstateRiskGroup(String prostateRiskGroup) {
         this.prostateRiskGroup = prostateRiskGroup;
     }
+
+    public String getBreastTrippleNegative() {
+        return breastTrippleNegative;
+    }
+
+    public void setBreastTrippleNegative(String breastTrippleNegative) {
+        this.breastTrippleNegative = breastTrippleNegative;
+    }
 }
+

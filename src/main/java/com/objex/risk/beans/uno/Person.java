@@ -14,6 +14,8 @@ import com.objex.risk.beans.tcuzick.Person.HRTUse;
 import com.objex.risk.beans.tcuzick.Person.HyperplasiaType;
 import com.objex.risk.beans.tcuzick.Person.MenosType;
 import com.objex.risk.beans.tcuzick.Person.ParousType;
+import com.objex.risk.beans.uno.Cancer.CancerType;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -588,5 +590,15 @@ public class Person extends BasePerson {
     public void setPolypDetails(PolypDetails polypDetails) {
         this.polypDetails = polypDetails;
     }
+
+	public Cancer getCancer(CancerType cancerType) {
+		for (Cancer cancer : getCancers()) {
+			if (cancer.getCancerType() == cancerType) {
+				return cancer;
+			}
+		}
+		return null;
+		
+	}
 
 }

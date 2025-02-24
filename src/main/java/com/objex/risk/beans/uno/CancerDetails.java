@@ -22,7 +22,7 @@ public class CancerDetails {
     private String bilateral = null;
     private String bilateralAge = null;
     private String metastatic = null;
-    private String breastMultiplePrimaries = null;
+    private String multiplePrimaries = null;
     private List<BreastCancerType> breastCancerTypes = null;
     private String breastTrippleNegative = null;
     private String prostateGleasonScore = null;
@@ -97,20 +97,6 @@ public class CancerDetails {
         this.metastatic = metastatic;
     }
 
-    /**
-     * @return the breastMultiplePrimaries
-     */
-    public String getBreastMultiplePrimaries() {
-        return breastMultiplePrimaries;
-    }
-
-    /**
-     * @param breastMultiplePrimaries the breastMultiplePrimaries to set
-     */
-    public void setBreastMultiplePrimaries(String breastMultiplePrimaries) {
-        this.breastMultiplePrimaries = breastMultiplePrimaries;
-    }
-
     public List<BreastCancerType> getBreastCancerTypes() {
         return breastCancerTypes;
     }
@@ -153,6 +139,14 @@ public class CancerDetails {
 
     public void setBreastTrippleNegative(String breastTrippleNegative) {
         this.breastTrippleNegative = breastTrippleNegative;
+    }
+    
+    public String getMultiplePrimaries() {
+        return multiplePrimaries;
+    }
+
+    public void setMultiplePrimaries(String multiplePrimaries) {
+        this.multiplePrimaries = multiplePrimaries;
     }
 }
 

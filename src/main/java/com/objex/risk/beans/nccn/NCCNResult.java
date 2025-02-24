@@ -23,16 +23,17 @@ public class NCCNResult extends BaseResult {
 
     private String hbocVersion;
     private String crcVersion;
-    private String hbocOverall;
+    private Boolean hbocOverall = Boolean.FALSE;
     private Set<String> hbocCriteriaMet;
     private Set<String> hbocCriteriaMetIds;
-    private String lynchOverall;
+    private Boolean lynchOverall = Boolean.FALSE;
     private Set<String> lynchCriteriaMet;
     private Set<String> lynchCriteriaMetIds;
-    private String apsApcOverall;
+    private Boolean apsApcOverall = Boolean.FALSE;
     private Set<String> apsApcCriteriaMet;
     private Set<String> apsApcCriteriaMetIds;
     private String dateAssessed;
+    private Boolean nccnCriteriaMet = Boolean.FALSE;
 
     public String getHbocVersion() {
         return hbocVersion;
@@ -50,11 +51,11 @@ public class NCCNResult extends BaseResult {
         this.crcVersion = crcVersion;
     }
 
-    public String getHbocOverall() {
+    public Boolean getHbocOverall() {
         return hbocOverall;
     }
 
-    public void setHbocOverall(String hbocOverall) {
+    public void setHbocOverall(Boolean hbocOverall) {
         this.hbocOverall = hbocOverall;
     }
 
@@ -74,11 +75,11 @@ public class NCCNResult extends BaseResult {
         this.hbocCriteriaMetIds = hbocCriteriaMetIds;
     }
 
-    public String getLynchOverall() {
+    public Boolean getLynchOverall() {
         return lynchOverall;
     }
 
-    public void setLynchOverall(String lynchOverall) {
+    public void setLynchOverall(Boolean lynchOverall) {
         this.lynchOverall = lynchOverall;
     }
 
@@ -98,11 +99,11 @@ public class NCCNResult extends BaseResult {
         this.lynchCriteriaMetIds = lynchCriteriaMetIds;
     }
 
-    public String getApsApcOverall() {
+    public Boolean getApsApcOverall() {
         return apsApcOverall;
     }
 
-    public void setApsApcOverall(String apsApcOverall) {
+    public void setApsApcOverall(Boolean apsApcOverall) {
         this.apsApcOverall = apsApcOverall;
     }
 
@@ -128,6 +129,14 @@ public class NCCNResult extends BaseResult {
 
     public void setDateAssessed(String dateAssessed) {
         this.dateAssessed = dateAssessed;
+    }
+
+    public Boolean getNccnCriteriaMet() {
+        return nccnCriteriaMet;
+    }
+
+    public void setNccnCriteriaMet(Boolean nccnCriteriaMet) {
+        this.nccnCriteriaMet = nccnCriteriaMet;
     }
 
     @Override

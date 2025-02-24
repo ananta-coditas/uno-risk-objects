@@ -7,6 +7,9 @@ package com.objex.risk.beans.claus;
 
 import com.objex.risk.beans.AffectedType;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -15,6 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author jason
  */
 @XmlType(namespace="com.objex.risk.beans.claus")
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
    
@@ -28,7 +32,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
 
     @Override
     protected List<String> germLines() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	 return java.util.Collections.emptyList();
     }
 
     public AffectedType getAffectedBreastType() {

@@ -9,11 +9,13 @@ import com.objex.risk.beans.BaseResult;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author jason
  */
+@XmlType(namespace="com.objex.risk.beans.panc")
 @XmlRootElement(name = "PancResult")
 public class PancResult extends BaseResult {
     public static final String PANCPRO = "PANCPRO";

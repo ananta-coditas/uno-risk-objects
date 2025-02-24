@@ -591,13 +591,15 @@ public class Person extends BasePerson {
         this.polypDetails = polypDetails;
     }
 
-	public Cancer getCancer(CancerType cancerType) {
+    public Cancer getCancer(CancerType cancerType) {
 		for (Cancer cancer : getCancers()) {
 			if (cancer.getCancerType() == cancerType) {
 				return cancer;
 			}
 		}
-		return null;
+        Cancer cancer = new Cancer();
+        cancer.setCancerType(cancerType);
+		return cancer;
 		
 	}
 

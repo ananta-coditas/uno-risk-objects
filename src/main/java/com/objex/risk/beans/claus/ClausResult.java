@@ -8,6 +8,9 @@ package com.objex.risk.beans.claus;
 import com.objex.risk.beans.BaseResult;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -15,6 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author jason
  */
 @XmlRootElement(name = "ClausResult")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ClausResult extends BaseResult {
 
     public static final String CLAUS = "CLAUS";

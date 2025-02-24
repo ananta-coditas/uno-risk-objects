@@ -22,7 +22,7 @@ public class Cancer {
         BREAST(""), OVARIAN(""), COLORECTAL(""), ENDOMETRIAL(""), NA(""), Gastric(""), Uterine(""), SmallIntestine(""),
         Fallopian(""), Biliary(""), Ureter(""), DESMOIDS(""), Blood(""), PRELEUKEMIA(""), LEUKEMIA(""), LYMPHOMA(""),
         Fallopian_Tube("Fallopian Tube"), SEBACEOUS_CARCINOMA("Sebaceous Carcinoma"),
-        SEBACEOUS_ADENOMAS("Sebaceous_adenomas"), SKIN("SKIN");
+        SEBACEOUS_ADENOMAS("Sebaceous_adenomas"), SKIN("SKIN"), PREMMRELATED("Related");
 
         String description;
 
@@ -37,7 +37,7 @@ public class Cancer {
 
     private CancerType cancerType = null;
     private Integer diagnoseAge = 0;
-    private Integer affected = null;
+    private Integer affected = 0;
     @XmlElement(name = "CancerDetails")
     private CancerDetails cancerDetails = null;
 

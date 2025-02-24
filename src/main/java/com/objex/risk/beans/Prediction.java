@@ -18,12 +18,17 @@ import javax.xml.bind.annotation.XmlValue;
  *
  * @author jason
  */
-@XmlRootElement(name = "Prediction")
+
 public class Prediction {
-    private Integer age = null;
+    public List<NameValue> getCancerRisks() {
+		return cancerRisks;
+	}
+	public void setCancerRisks(List<NameValue> cancerRisks) {
+		this.cancerRisks = cancerRisks;
+	}
+	private Integer age = null;
     Map<String,String> colToField = new HashMap<>();
     
-    @XmlElement(name = "result")
     private List<NameValue> cancerRisks = new ArrayList<>();
     
     
@@ -69,16 +74,27 @@ public class Prediction {
     public void setColumnMappings(Map<String,String> map) {
         colToField = map;
     }
-    private static class NameValue {
-        @XmlValue
-        Double value = null;
-        @XmlAttribute
-        String name = null;
+    @XmlRootElement(name = "result")
+    public static class NameValue {
+        private String name = null;
+        private Double value = null;
         public NameValue() {}
         public NameValue(String name, Double value) {
             this.name = name;
             this.value = value;  
         }
+		public Double getValue() {
+			return value;
+		}
+		public void setValue(Double value) {
+			this.value = value;
+		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
     }
     
     

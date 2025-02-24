@@ -10,6 +10,9 @@ import static com.objex.risk.beans.Germline.BRCA1;
 import static com.objex.risk.beans.Germline.BRCA2;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -19,6 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author jason
  */
 @XmlType(namespace="com.objex.risk.beans.gail")
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
     public enum Race  {White(1), Black(2), Hispanic(3), Chinese(7), Japanese(8), Filipino(9), Hawaiian(10), PacificIslander(11), AsianAmerican(12),Unsupported(13);

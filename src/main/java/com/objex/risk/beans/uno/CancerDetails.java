@@ -9,6 +9,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import com.objex.risk.beans.AffectedType;
 
 /**
  *
@@ -17,9 +18,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "CancerDetails")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CancerDetails {
-    private String contralateral    = null;
+	private AffectedType contralateral    = null;
     private String contralateralAge = null;
-    private String bilateral = null;
+    private AffectedType bilateral = null;
     private String bilateralAge = null;
     private String metastatic = null;
     private String multiplePrimaries = null;
@@ -31,14 +32,14 @@ public class CancerDetails {
     /**
      * @return the contralateral
      */
-    public String getContralateral() {
+    public AffectedType getContralateral() {
         return contralateral;
     }
 
     /**
      * @param contralateral the contralateral to set
      */
-    public void setContralateral(String contralateral) {
+    public void setContralateral(AffectedType contralateral) {
         this.contralateral = contralateral;
     }
     /**
@@ -58,14 +59,14 @@ public class CancerDetails {
     /**
      * @return the bilateral
      */
-    public String getBilateral() {
+    public AffectedType getBilateral() {
         return bilateral;
     }
 
     /**
      * @param bilateral the bilateral to set
      */
-    public void setBilateral(String bilateral) {
+    public void setBilateral(AffectedType bilateral) {
         this.bilateral = bilateral;
     }
 

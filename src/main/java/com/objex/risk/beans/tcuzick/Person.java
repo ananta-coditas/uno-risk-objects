@@ -10,6 +10,9 @@ import static com.objex.risk.beans.Germline.BRCA1;
 import static com.objex.risk.beans.Germline.BRCA2;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -18,6 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author jason
  */
 @XmlType(namespace="com.objex.risk.beans.tcuzick")
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "Person")
 public class Person extends com.objex.risk.beans.BasePerson {
     

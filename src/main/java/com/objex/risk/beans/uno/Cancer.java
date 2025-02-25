@@ -22,7 +22,7 @@ public class Cancer {
         BREAST(""), OVARIAN(""), COLORECTAL(""), ENDOMETRIAL(""), NA(""), Gastric(""), Uterine(""), SmallIntestine(""),
         Fallopian(""), Biliary(""), Ureter(""), DESMOIDS(""), Blood(""), PRELEUKEMIA(""), LEUKEMIA(""), LYMPHOMA(""),
         Fallopian_Tube("Fallopian Tube"), SEBACEOUS_CARCINOMA("Sebaceous Carcinoma"),
-        SEBACEOUS_ADENOMAS("Sebaceous_adenomas"), SKIN("SKIN"), PREMMRELATED("Related");
+        SEBACEOUS_ADENOMAS("Sebaceous_adenomas"), SKIN("SKIN"), PREMMRELATED("Related"),PANCREATIC("pancratic");
 
         String description;
 

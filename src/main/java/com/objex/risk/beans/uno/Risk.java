@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.objex.risk.beans.BaseRisk;
+import com.objex.risk.beans.uno.Model.ModelName;
 
 /**
  *
@@ -44,4 +45,12 @@ public class Risk extends BaseRisk {
     public void setFamily(List<Person> family) {
         this.family = family;
     }
+	public Model getRequestedModel(ModelName modelName) {
+	    for (Model model : requestedModels) {
+	    	if (model.getName() == modelName) {
+	    		return model;
+	    	}
+	    }
+		return null;
+	}
 }

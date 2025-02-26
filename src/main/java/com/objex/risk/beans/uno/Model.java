@@ -24,8 +24,7 @@ public class Model {
     private ModelName name         = null;
     private int ageBy        = 0;
     private int ageTo        = 0;
-    private String saveIncoming = null;
-    private String chartCode    = null;
+    private Integer chartCode    = null;
 
     @XmlElementWrapper(name="Instructions")
     @XmlElement(name="Instruction")
@@ -73,31 +72,18 @@ public class Model {
         this.ageTo = ageTo;
     }
 
-    /**
-     * @return the saveIncoming
-     */
-    public String getSaveIncoming() {
-        return saveIncoming;
-    }
-
-    /**
-     * @param saveIncoming the saveIncoming to set
-     */
-    public void setSaveIncoming(String saveIncoming) {
-        this.saveIncoming = saveIncoming;
-    }
 
     /**
      * @return the chartCode
      */
-    public String getChartCode() {
+    public Integer getChartCode() {
         return chartCode;
     }
 
     /**
      * @param chartCode the chartCode to set
      */
-    public void setChartCode(String chartCode) {
+    public void setChartCode(Integer chartCode) {
         this.chartCode = chartCode;
     }
 

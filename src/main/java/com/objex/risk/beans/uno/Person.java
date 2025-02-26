@@ -5,6 +5,8 @@
 package com.objex.risk.beans.uno;
 
 import com.objex.risk.beans.BasePerson;
+import com.objex.risk.beans.brca.Person.Ethnic;
+
 import static com.objex.risk.beans.Germline.MLH1;
 import static com.objex.risk.beans.Germline.MSH2;
 import static com.objex.risk.beans.Germline.MSH6;
@@ -37,10 +39,6 @@ public class Person extends BasePerson {
     // @XmlType(namespace="com.objex.risk.beans.uno.Person.Ethnic")
     // public enum Ethnic {nonAJ, AJ}
 
-    @XmlType(namespace = "com.objex.risk.beans.uno.Person.Ethnic")
-    public enum Ethnic {
-        nonAJ, AJ, Italian, Other, NA
-    }
 
     public enum FamilyRace {
         Unknown, Hispanic, Asian, Black, NativeAmerican, White, AfricanAmerican, Caucasian, 

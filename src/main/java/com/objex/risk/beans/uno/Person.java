@@ -600,5 +600,10 @@ public class Person extends BasePerson {
 		return cancer;
 		
 	}
+    public void addCancer(Cancer cancer) {
+    	if (cancer != null) {
+    		cancers.add(cancer);
+    	}
+    }
 
 }

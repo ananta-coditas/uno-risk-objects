@@ -16,6 +16,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Cancer")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cancer {
+	public Cancer() {
+		
+	}
+	public Cancer(CancerType type, Integer affected, Integer diagnoseAge) {
+		setCancerType(type);
+		setAffected(affected);
+		setDiagnoseAge(diagnoseAge);
+	}
 
     public enum CancerType {
 

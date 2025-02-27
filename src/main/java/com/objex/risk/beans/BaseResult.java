@@ -21,12 +21,27 @@ import java.util.Map;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
  *
  * @author jason
  * */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "model", visible = true)
+//You have to list all sub-types of this class here
+@JsonSubTypes({
+   
+   @JsonSubTypes.Type(name = "CLAUS", value = ClausResult.class),
+   @JsonSubTypes.Type(name = "GAIL", value = GailResult.class),
+   @JsonSubTypes.Type(name = "PREMM", value = PREMMResult.class),
+   @JsonSubTypes.Type(name = "TYRER", value = TyrerResult.class),
+   @JsonSubTypes.Type(name = "BRCAPRO", value = BRCAResult.class),
+   @JsonSubTypes.Type(name = "MMRPRO", value = MMRResult.class),
+   @JsonSubTypes.Type(name = "PANCPRO", value = PancResult.class),
+   @JsonSubTypes.Type(name = "MELAPRO", value = MelaResult.class)
+})
 @XmlSeeAlso({TyrerResult.class,GailResult.class,ChartResult.class,MMRResult.class,BRCAResult.class,PancResult.class,MelaResult.class,PREMMResult.class,ClausResult.class})
 public abstract class BaseResult {
     @XmlElement(name="Prediction")

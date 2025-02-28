@@ -53,4 +53,7 @@ public class Risk extends BaseRisk {
 	    }
 		return null;
 	}
+	public void add(Person person) {
+       family.add(person);
+    }
 }

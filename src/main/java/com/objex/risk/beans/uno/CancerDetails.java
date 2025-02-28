@@ -19,9 +19,9 @@ import com.objex.risk.beans.AffectedType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CancerDetails {
 	private AffectedType contralateral    = null;
-    private String contralateralAge = null;
+    private Integer contralateralAge = null;
     private AffectedType bilateral = null;
-    private String bilateralAge = null;
+    private Integer bilateralAge = null;
     private String metastatic = null;
     private String multiplePrimaries = null;
     private List<BreastCancerType> breastCancerTypes = null;
@@ -45,14 +45,14 @@ public class CancerDetails {
     /**
      * @return the contralateralAge
      */
-    public String getContralateralAge() {
+    public Integer getContralateralAge() {
         return contralateralAge;
     }
 
     /**
      * @param contralateralAge the contralateralAge to set
      */
-    public void setContralateralAge(String contralateralAge) {
+    public void setContralateralAge(Integer contralateralAge) {
         this.contralateralAge = contralateralAge;
     }
 
@@ -73,14 +73,14 @@ public class CancerDetails {
     /**
      * @return the bilateralAge
      */
-    public String getBilateralAge() {
+    public Integer getBilateralAge() {
         return bilateralAge;
     }
 
     /**
      * @param bilateralAge the bilateralAge to set
      */
-    public void setBilateralAge(String bilateralAge) {
+    public void setBilateralAge(Integer bilateralAge) {
         this.bilateralAge = bilateralAge;
     }
 

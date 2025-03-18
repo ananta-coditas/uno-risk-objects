@@ -5,6 +5,8 @@
  */
 package com.objex.risk.beans.tcuzick;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.objex.risk.beans.AffectedType;
 import static com.objex.risk.beans.Germline.BRCA1;
 import static com.objex.risk.beans.Germline.BRCA2;
@@ -150,7 +152,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public MenosType getMenostat() {
         return menostat;
     }
-
+    @JsonIgnore
     public ParousType getParous() {
        ParousType parous =  ParousType.Nulliparous;
         if (hasLiveBirth == null) {
@@ -210,7 +212,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public Double getYearsSinceHRT() {
         return yearsSinceHRT;
     }
-
+    @JsonSetter
     public void setDensityMeasure(DensityMeasure densityMeasure) {
         this.densityMeasure = densityMeasure;
         if (densityMeasure == null) {
@@ -271,7 +273,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public boolean getHasLCIS() {
         return hasLCIS;
     }
-
+    @JsonSetter
     public void setAffectedBreastType(AffectedType affectedBreastType) {
         if (affectedBreastType == null) {
             this.affectedBreastType = AffectedType.NONE;
@@ -283,7 +285,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
      public void setAffectedBreastType(Integer affectedBreastType) {
         setAffectedBreastType(AffectedType.toAffectedType(affectedBreastType));
     }
-     
+     @JsonSetter
       public void setAffectedBilateralBreastType(AffectedType affectedBilateralBreastType) {
         if (affectedBilateralBreastType == null) {
             this.affectedBilateralBreastType = AffectedType.NONE;
@@ -303,7 +305,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public AffectedType getAffectedBilateralBreastType() {
         return affectedBilateralBreastType;
     }
-     
+    @JsonSetter
     public void setAffectedOvarianType(AffectedType affectedOvarianType) {
         if (affectedOvarianType == null) {
             this.affectedOvarianType = AffectedType.NONE;

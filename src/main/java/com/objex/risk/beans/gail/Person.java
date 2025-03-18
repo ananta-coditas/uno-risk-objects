@@ -5,6 +5,7 @@
  */
 package com.objex.risk.beans.gail;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.objex.risk.beans.AffectedType;
 import static com.objex.risk.beans.Germline.BRCA1;
 import static com.objex.risk.beans.Germline.BRCA2;
@@ -95,7 +96,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
      public boolean getHasHyperplasia() {
         return hasHyperplasia;
     }
-
+    @JsonSetter
     public void setAffectedBreastType(AffectedType affectedBreastType) {
         if (affectedBreastType == null) {
             this.affectedBreastType = AffectedType.NONE;

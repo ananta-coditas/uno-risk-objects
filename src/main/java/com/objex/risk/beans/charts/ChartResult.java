@@ -19,7 +19,7 @@ public class ChartResult extends BaseResult {
 
     @Override
     public String getModel() {
-        return getContext();
+        return "CHARTRESULT";
     }
 
     @Override

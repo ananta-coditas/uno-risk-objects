@@ -5,6 +5,7 @@
  */
 package com.objex.risk.beans.claus;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.objex.risk.beans.AffectedType;
 import java.util.List;
 
@@ -49,7 +50,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     }
 
    
-
+    @JsonSetter
     public void setAffectedBreastType(AffectedType affectedBreastType) {
         if (affectedBreastType == null) {
             this.affectedBreastType = AffectedType.NONE;
@@ -82,7 +83,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
         }
         return diagnoseBreastAge;
     }
-     
+     @JsonSetter
       public void setAffectedOvarianType(AffectedType affectedOvarianType) {
         if (affectedOvarianType == null) {
             this.affectedOvarianType = AffectedType.NONE;

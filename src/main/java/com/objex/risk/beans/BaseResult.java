@@ -40,7 +40,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
    @JsonSubTypes.Type(name = "BRCAPRO", value = BRCAResult.class),
    @JsonSubTypes.Type(name = "MMRPRO", value = MMRResult.class),
    @JsonSubTypes.Type(name = "PANCPRO", value = PancResult.class),
-   @JsonSubTypes.Type(name = "MELAPRO", value = MelaResult.class)
+   @JsonSubTypes.Type(name = "MELAPRO", value = MelaResult.class),
+   @JsonSubTypes.Type(name = "CHARTRESULT", value = ChartResult.class)
+   
 })
 @XmlSeeAlso({TyrerResult.class,GailResult.class,ChartResult.class,MMRResult.class,BRCAResult.class,PancResult.class,MelaResult.class,PREMMResult.class,ClausResult.class})
 public abstract class BaseResult {

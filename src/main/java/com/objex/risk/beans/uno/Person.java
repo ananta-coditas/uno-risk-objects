@@ -7,9 +7,12 @@ package com.objex.risk.beans.uno;
 import com.objex.risk.beans.BasePerson;
 import com.objex.risk.beans.brca.Person.Ethnic;
 
+import static com.objex.risk.beans.Germline.BRCA1;
+import static com.objex.risk.beans.Germline.BRCA2;
 import static com.objex.risk.beans.Germline.MLH1;
 import static com.objex.risk.beans.Germline.MSH2;
 import static com.objex.risk.beans.Germline.MSH6;
+import static com.objex.risk.beans.Germline.P16;
 import com.objex.risk.beans.tcuzick.Person.DensityMeasure;
 import com.objex.risk.beans.tcuzick.Person.HRTType;
 import com.objex.risk.beans.tcuzick.Person.HRTUse;
@@ -100,14 +103,30 @@ public class Person extends BasePerson {
     private Double yearsSinceHRT = 0d;
     private NCCNEnum polypOverall = NCCNEnum.NOT_PROVIDED;
     private PolypDetails polypDetails = null;
-    @XmlElementWrapper(name = "Cancers")
+    private Marker marker = null;
+
+	@XmlElementWrapper(name = "Cancers")
     @XmlElement(name = "Cancer")
     private List<Cancer> cancers = new ArrayList<>();
 
     @Override
     protected List<String> germLines() {
-        return Arrays.asList(MLH1, MSH2, MSH6);
+        return Arrays.asList(BRCA1,BRCA2,MLH1, MSH2, MSH6,P16);
     }
+    /**
+     * 
+     * @return
+     */
+    public Marker getMarker() {
+		return marker;
+	}
+    /**
+     * 
+     * @param marker
+     */
+	public void setMarker(Marker marker) {
+		this.marker = marker;
+	}
 
     /**
      * @return the menarcheAge

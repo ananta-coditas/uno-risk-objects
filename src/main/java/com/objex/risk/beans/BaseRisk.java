@@ -8,6 +8,8 @@ package com.objex.risk.beans;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  *
  * @author jason
@@ -52,6 +54,7 @@ public abstract class BaseRisk implements Cloneable, Serializable {
      * first element
      * @return 
      */
+    @JsonIgnore
     public BasePerson getProband() {
         if (!getFamily().isEmpty()) {
             return getFamily().get(0);

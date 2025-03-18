@@ -5,9 +5,14 @@
  */
 package com.objex.risk.beans.premm;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.objex.risk.beans.AffectedType;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -48,7 +53,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
      public AffectedType getAffectedRelatedType() {
         return affectedRelatedType;
     }
-
+     @JsonSetter
     public void setAffectedColonType(AffectedType affectedColonType) {
          if (affectedColonType == null) {
             this.affectedColonType = AffectedType.NONE;
@@ -56,10 +61,12 @@ public class Person extends com.objex.risk.beans.BasePerson {
             this.affectedColonType =  affectedColonType;
         }
     }
+   
     public void setAffectedColonType(Integer intType) {
         
         setAffectedColonType(AffectedType.toAffectedType(intType));
     }
+    @JsonSetter
     public void setAffectedRelatedType(AffectedType affectedRelatedType) {
          if (affectedRelatedType == null) {
             this.affectedRelatedType = AffectedType.NONE;
@@ -76,7 +83,7 @@ public class Person extends com.objex.risk.beans.BasePerson {
     public AffectedType getAffectedEndometriumType() {
         return affectedEndometriumType;
     }
-
+    @JsonSetter
     public void setAffectedEndometriumType(AffectedType affectedEndometriumType) {
         if (affectedEndometriumType == null) {
             this.affectedEndometriumType = AffectedType.NONE;

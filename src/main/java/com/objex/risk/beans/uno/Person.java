@@ -72,8 +72,8 @@ public class Person extends BasePerson {
     // private Integer diagnoseBreastContralateralAge = 0;
     private Ethnic ethnic = Ethnic.nonAJ;
     private ParousType parous = null;
-    private boolean performedMasectomy = false;
-    private Integer ageMasectomy = 1;
+    private boolean performedMastectomy = false;
+    private Integer ageMastectomy = 1;
 
     private boolean performedOophorectomy = false;
     private Integer ageOophorectomy = 1;

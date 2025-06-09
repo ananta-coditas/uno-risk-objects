@@ -71,17 +71,6 @@ private String transId     = null;
         this.ck5_6 = CK5_6;
     }
     
-     @XmlElement(name = "ck56")
-    public TestResult getCK56() {
-        return ck5_6;
-    }
-
-    public void setCK56(TestResult CK5_6) {
-        if (CK5_6 != null)
-        this.ck5_6 = CK5_6;
-    }
-    
-    
     
     @XmlElement(name = "pr")
     public TestResult getPR() {

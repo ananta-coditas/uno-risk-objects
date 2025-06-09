@@ -492,29 +492,29 @@ public class Person extends BasePerson {
     /**
      * @return the performedMasectomy
      */
-    public boolean isPerformedMasectomy() {
-        return performedMasectomy;
+    public boolean isPerformedMastectomy() {
+        return performedMastectomy;
     }
 
     /**
      * @param performedMasectomy the performedMasectomy to set
      */
-    public void setPerformedMasectomy(boolean performedMasectomy) {
-        this.performedMasectomy = performedMasectomy;
+    public void setPerformedMastectomy(boolean performedMasectomy) {
+        this.performedMastectomy = performedMasectomy;
     }
 
     /**
      * @return the ageMasectomy
      */
-    public Integer getAgeMasectomy() {
-        return ageMasectomy;
+    public Integer getAgeMastectomy() {
+        return ageMastectomy;
     }
 
     /**
      * @param ageMasectomy the ageMasectomy to set
      */
     public void setAgeMasectomy(Integer ageMasectomy) {
-        this.ageMasectomy = ageMasectomy;
+        this.ageMastectomy = ageMastectomy;
     }
 
     /**

@@ -30,7 +30,10 @@ public class Cancer {
         BREAST(""), OVARIAN(""), COLORECTAL(""), ENDOMETRIAL(""), NA(""), Gastric(""), Uterine(""), SmallIntestine(""),
         Fallopian(""), Biliary(""), Ureter(""), DESMOIDS(""), Blood(""), PRELEUKEMIA(""), LEUKEMIA(""), LYMPHOMA(""),
         Fallopian_Tube("Fallopian Tube"), SEBACEOUS_CARCINOMA("Sebaceous Carcinoma"),
-        SEBACEOUS_ADENOMAS("Sebaceous_adenomas"), SKIN("SKIN"), PREMMRELATED("Related"),PANCREATIC("pancratic");
+        SEBACEOUS_ADENOMAS("Sebaceous_adenomas"), SKIN("SKIN"), PREMMRELATED("Related"),PANCREATIC("pancratic"),
+        PROSTATE(""), BILIARY_TRACT(""), KIDNEY(""), BRAIN(""), SEBACEOUS_ADENOMA(""), MELANOMA(""), 
+        GALLBLADDER(""), CERVICAL(""), BLADDER(""), THROAT(""), THYROID(""), ORAL(""), LIVER(""), TESTICULAR(""), 
+        PARAGANGLIOMA(""), PHEOCHROMOCYTOMA(""), LUNG(""), SARCOMA("");
 
         String description;
 

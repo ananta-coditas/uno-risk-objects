@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Model {
     
-    public enum ModelName {BRCAPRO,MMRPRO,MELAPRO,PANCPRO,PREMM,GAIL,TYRER,CLAUS,NCCN}
+    public enum ModelName {BRCAPRO,MMRPRO,MELAPRO,PANCPRO,PREMM,GAIL,TYRER,CLAUS,NCCN,COMPETING_MORTALITY_SCENARIO}
     private ModelName name         = null;
     private int ageBy        = 0;
     private int ageTo        = 0;

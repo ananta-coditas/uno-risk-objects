@@ -32,6 +32,9 @@ public class NCCNResult extends BaseResult {
     private Boolean apsApcOverall = Boolean.FALSE;
     private Set<String> apsApcCriteriaMet;
     private Set<String> apsApcCriteriaMetIds;
+    private Boolean gastricOverall = Boolean.FALSE;
+    private Set<String> gastricCriteriaMet;
+    private Set<String> gastricCriteriaMetIds;
     private String dateAssessed;
     private Boolean nccnCriteriaMet = Boolean.FALSE;
 
@@ -121,6 +124,30 @@ public class NCCNResult extends BaseResult {
 
     public void setApsApcCriteriaMetIds(Set<String> apsApcCriteriaMetIds) {
         this.apsApcCriteriaMetIds = apsApcCriteriaMetIds;
+    }
+
+    public Boolean getGastricOverall() {
+        return gastricOverall;
+    }
+
+    public void setGastricOverall(Boolean gastricOverall) {
+        this.gastricOverall = gastricOverall;
+    }
+
+    public Set<String> getGastricCriteriaMet() {
+        return gastricCriteriaMet;
+    }
+
+    public void setGastricCriteriaMet(Set<String> gastricCriteriaMet) {
+        this.gastricCriteriaMet = gastricCriteriaMet;
+    }
+
+    public Set<String> getGastricCriteriaMetIds() {
+        return gastricCriteriaMetIds;
+    }
+
+    public void setGastricCriteriaMetIds(Set<String> gastricCriteriaMetIds) {
+        this.gastricCriteriaMetIds = gastricCriteriaMetIds;
     }
 
     public String getDateAssessed() {
